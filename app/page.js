@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import initialProducts from './productsData';
 import debounce from 'lodash.debounce';
 import Basket from './components/Basket';
-
+import Image from 'next/image';
 const ProductsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState('products');
@@ -64,11 +64,19 @@ const ProductsPage = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Product List</title>
+        <title>รายการสินค้า</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <header className={styles.header}>
-        <h1 className={styles.title}>Product List</h1>
+        <Image
+          src="/images/logo.png"
+          alt="Logo"
+          width={150}
+          height={150}
+          className={styles.logo}
+          quality={100}
+        />
+        <h1 className={styles.title}>รายการสินค้า</h1>
         <input
           type="text"
           placeholder="Search products..."
