@@ -1,55 +1,62 @@
+'use client';
+
 import React from 'react';
-import Papa from 'papaparse';
 import styles from './Basket.module.css';
 
 const Basket = ({ basket }) => {
-  const calculateTotal = () => {
-    return basket.reduce((total, item) => total + parseFloat(item.price.replace('$', '')) * item.quantity, 0).toFixed(2);
-  };
+  // Calculate total value for each item and total basket amount
+  const basketWithTotals = basket.map(item => ({
+    ...item,
+    totalValue: item.quantity * parseFloat(item.price.replace('฿', ''))
+  }));
 
-  const exportToCSV = () => {
-    // BOM for UTF-8
-    const bom = '\uFEFF';
-    const csv = Papa.unparse({
-      fields: ['Name', 'Price', 'Quantity'],
-      data: basket.map(item => [item.name, item.price, item.quantity]),
-    });
-
-    // Combine BOM and CSV content
-    const csvContent = bom + csv;
-    const encodedUri = encodeURI(`data:text/csv;charset=utf-8,${csvContent}`);
-    const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', 'basket.csv');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const totalAmount = basketWithTotals.reduce((acc, item) => acc + item.totalValue, 0);
 
   return (
     <div className={styles.basketContainer}>
-      <h2 className={styles.title}>Basket</h2>
-      {basket.length === 0 ? (
-        <p className={styles.emptyMessage}>The basket is empty.</p>
-      ) : (
-        <div>
-          <ul className={styles.basketList}>
-            {basket.map((item, index) => (
-              <li key={index} className={styles.basketItem}>
-                <span>{item.name}</span> - {item.price} x {item.quantity}
-              </li>
-            ))}
-          </ul>
-          <div className={styles.total}>
-            <strong>Total Amount: ${calculateTotal()}</strong>
-          </div>
-          <button onClick={exportToCSV} className={styles.exportButton}>
-            Export to CSV
-          </button>
-        </div>
-      )}
+      <h2>Basket</h2>
+      <ul className={styles.basketList}>
+        {basketWithTotals.map((item, index) => (
+          <li key={index} className={styles.basketItem}>
+            <div className={styles.basketItemInfo}>
+              <span>จำนวน: {item.quantity} ชิ้น x ราคา {item.price} = ฿{item.totalValue.toFixed(2)}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+      <div className={styles.total}>
+        Total Amount: ฿{totalAmount.toFixed(2)}
+      </div>
+      <button className={styles.exportButton} onClick={() => exportToCSV(basketWithTotals)}>
+        Export to CSV
+      </button>
     </div>
   );
+};
+
+// Function to export basket data to CSV
+const exportToCSV = (basket) => {
+  const header = ['Name', 'Quantity', 'Price', 'Total'];
+  const rows = basket.map(item => [
+    item.name,
+    item.quantity,
+    item.price,
+    `฿${item.totalValue.toFixed(2)}`
+  ]);
+
+  const csvContent = [
+    header.join(','),
+    ...rows.map(e => e.join(','))
+  ].join('\n');
+
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.setAttribute('download', 'basket.csv');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 
 export default Basket;
