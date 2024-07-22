@@ -19,7 +19,7 @@ const Basket = ({ basket }) => {
         {basketWithTotals.map((item, index) => (
           <li key={index} className={styles.basketItem}>
             <div className={styles.basketItemInfo}>
-              <span>จำนวน: {item.quantity} ชิ้น x ราคา {item.price} = ฿{item.totalValue.toFixed(2)}</span>
+              {item.name} จำนวน: {item.quantity} ชิ้น x ราคา {item.price} = ฿{item.totalValue.toFixed(2)}
             </div>
           </li>
         ))}
