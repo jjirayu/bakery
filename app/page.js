@@ -13,6 +13,8 @@ const ProductsPage = () => {
   const [products, setProducts] = useState(initialProducts);
   const [filteredProducts, setFilteredProducts] = useState(initialProducts);
   const [basket, setBasket] = useState([]);
+  const [location, setLocation] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const debouncedSearch = debounce(() => {
@@ -59,6 +61,26 @@ const ProductsPage = () => {
       p.name === product.name ? { ...p, quantity: 1 } : p
     );
     setProducts(updatedProducts);
+  };
+
+  const handleGetLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          setLocation({
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          });
+          setError(null);
+        },
+        error => {
+          setError(error.message);
+          setLocation(null);
+        }
+      );
+    } else {
+      setError('Geolocation is not supported by this browser.');
+    }
   };
 
   return (
@@ -142,6 +164,15 @@ const ProductsPage = () => {
           <div className={styles.aboutUs}>
             <h2>About Us</h2>
             <p>This is the About Us section. You can add more information here about your company.</p>
+            <button className={styles.locationButton} onClick={handleGetLocation}>
+              Get Current Location
+            </button>
+            {location && (
+              <p>Latitude: {location.latitude}, Longitude: {location.longitude}</p>
+            )}
+            {error && (
+              <p>Error: {error}</p>
+            )}
           </div>
         )}
         {activeTab === 'basket' && (
