@@ -13,14 +13,14 @@ const ProductsPage = () => {
   const [products, setProducts] = useState(initialProducts);
   const [filteredProducts, setFilteredProducts] = useState(initialProducts);
   const [basket, setBasket] = useState([]);
-  const [location, setLocation] = useState(null);
-  const [error, setError] = useState(null);
+  const [filterType, setFilterType] = useState(''); // New state for filter type
 
   useEffect(() => {
     const debouncedSearch = debounce(() => {
       setFilteredProducts(
         products.filter(product =>
-          product.name.toLowerCase().includes(searchTerm.toLowerCase())
+          product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+          (filterType ? product.type === filterType : true)
         )
       );
     }, 300);
@@ -29,7 +29,7 @@ const ProductsPage = () => {
     return () => {
       debouncedSearch.cancel();
     };
-  }, [searchTerm, products]);
+  }, [searchTerm, products, filterType]);
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -63,24 +63,8 @@ const ProductsPage = () => {
     setProducts(updatedProducts);
   };
 
-  const handleGetLocation = () => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        position => {
-          setLocation({
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude
-          });
-          setError(null);
-        },
-        error => {
-          setError(error.message);
-          setLocation(null);
-        }
-      );
-    } else {
-      setError('Geolocation is not supported by this browser.');
-    }
+  const handleFilterChange = (type) => {
+    setFilterType(type);
   };
 
   return (
@@ -129,50 +113,51 @@ const ProductsPage = () => {
       </nav>
       <div className={styles.content}>
         {activeTab === 'products' && (
-          <div className={styles.productList}>
-            {filteredProducts.map((product, index) => (
-              <div className={styles.productCard} key={index}>
-                <h2 className={styles.productName}>{product.name}</h2>
-                <img src={product.image} alt={product.name} className={styles.productImage} />
-                <p className={styles.productPrice}>Price: {product.price}</p>
-                <div className={styles.productQuantity}>
-                  <button
-                    className={styles.quantityButton}
-                    onClick={() => handleQuantityChange(product.name, -1)}
-                  >
-                    -
-                  </button>
-                  <span>{product.quantity}</span>
-                  <button
-                    className={styles.quantityButton}
-                    onClick={() => handleQuantityChange(product.name, 1)}
-                  >
-                    +
-                  </button>
-                  <button
-                    className={styles.addButton}
-                    onClick={() => handleAddToBasket(product)}
-                  >
-                    Add to Basket
-                  </button>
+          <div className={styles.productSection}>
+            <div className={styles.filterSection}>
+              <h3>Filter by Type</h3>
+              <button onClick={() => handleFilterChange('')}>All</button>
+              <button onClick={() => handleFilterChange('บรรจุภัณฑ์')}>บรรจุภัณฑ์</button>
+              <button onClick={() => handleFilterChange('ของสด')}>ของสด</button>
+              <button onClick={() => handleFilterChange('เครื่องครัว')}>เครื่องครัว</button>
+              <button onClick={() => handleFilterChange('วัตถุดิบ')}>วัตถุดิบ</button>
+            </div>
+            <div className={styles.productList}>
+              {filteredProducts.map((product, index) => (
+                <div className={styles.productCard} key={index}>
+                  <h2 className={styles.productName}>{product.name}</h2>
+                  <img src={product.image} alt={product.name} className={styles.productImage} />
+                  <p className={styles.productPrice}>ราคา: {product.price}</p>
+                  <div className={styles.productQuantity}>
+                    <button
+                      className={styles.quantityButton}
+                      onClick={() => handleQuantityChange(product.name, -1)}
+                    >
+                      -
+                    </button>
+                    <span>{product.quantity}</span>
+                    <button
+                      className={styles.quantityButton}
+                      onClick={() => handleQuantityChange(product.name, 1)}
+                    >
+                      +
+                    </button>
+                    <button
+                      className={styles.addButton}
+                      onClick={() => handleAddToBasket(product)}
+                    >
+                      Add to Basket
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
         {activeTab === 'about' && (
           <div className={styles.aboutUs}>
             <h2>About Us</h2>
             <p>This is the About Us section. You can add more information here about your company.</p>
-            <button className={styles.locationButton} onClick={handleGetLocation}>
-              Get Current Location
-            </button>
-            {location && (
-              <p>Latitude: {location.latitude}, Longitude: {location.longitude}</p>
-            )}
-            {error && (
-              <p>Error: {error}</p>
-            )}
           </div>
         )}
         {activeTab === 'basket' && (
