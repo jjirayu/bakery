@@ -4,7 +4,7 @@ const initialProducts = [
     { name: 'แป้งอเนกประสงค์ตราว่าว', price: '38฿',type:'วัตถุดิบ', quantity: 1, image: '/images/แป้งว่าว.jpeg' },
     { name: 'แป้งหงส์ขาว', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/แป้งหงส์.jpeg' },
     { name: 'แป้งพัด', price: '49฿',type:'วัตถุดิบ', quantity: 1, image: '/images/แป้งพัด.jpeg' },
-    { name: 'แป้งบัวแดง', price: '15฿',type:'วัตถุดิบ', quantity: 1, image: '/images/แป้งบัวแดง.jpeg' },
+    { name: 'แป้งบัวแดง', price: '38฿',type:'วัตถุดิบ', quantity: 1, image: '/images/แป้งบัวแดง.jpeg' },
     { name: 'น้ำตาลทรายแดง มิตรผล 1 กก', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/ทรายแดงมิตรผล.jpeg' },
     { name: 'ชาตรามือ ฉลากแดง 400 ก.', price: '74฿',type:'วัตถุดิบ', quantity: 1, image: '/images/ชาตรามือแดง.jpeg' },
     { name: 'ชาตรามือ ชาเขียว 200 ก.', price: '74฿',type:'วัตถุดิบ', quantity: 1, image: '/images/ชาตรามือเขียว.jpeg' },
@@ -18,6 +18,12 @@ const initialProducts = [
     { name: 'แก้วน้ำ Ocean Patio 290 ml', price: '20฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/PATIO HI BALL 290 ml.jpg' },
     { name: 'แก้วน้ำ Ocean CHARISMA LONG DRINK 415 ml',type:'บรรจุภัณฑ์', price: '35฿', quantity: 1, image: '/images/CHARISMA LONG DRINK.jpg' },
     { name: 'แก้วน้ำ SAN MARINO ROCK 290 ml', price: '35฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/San MARIONO ROCK 290 ml.jpg' },
+    { name: 'ซันไลต์เลมอน เทอร์โบ 3.2 ลิตร', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ซันไลต์ 3.2 ลิตร.jpeg' },
+    { name: 'ซันไลต์พลัส แอนตี้แบค 2.8 ลิตร', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ซันไลต์พลัส แอนตี้แบค 2.8 ลิตร.jpeg' },
+    { name: 'ถ้วยฟอยด์ 4003', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ถ้วย4003.jpg'},
+    { name: 'ถ้วยฟอยด์ 4003 ชมพู', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ถ้วย4003 หินอ่อนชมพู.jpg'},
+    { name: 'ถ้วยฟอยด์ 4003 ลายวัว', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ถ้วย4003 ลายวัว.jpg'},
+    { name: 'ถ้วยฟอยด์ 4003 ลายวัว', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ถ้วย4003 ลายวัวชมพู.jpg'},
     
   ];
   
