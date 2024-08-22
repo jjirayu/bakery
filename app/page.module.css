@@ -255,18 +255,23 @@
 
   .filterSection {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
     margin-bottom: 15px;
+    padding: 5px 0;
   }
 
   .filterButton {
     flex: 0 0 auto;
     font-size: 14px;
-    padding: 8px 12px;
-    margin-right: 8px;
+    padding: 8px 10px;
+    margin-right: 5px;
     white-space: nowrap;
   }
 
+  /* Hide horizontal scrollbar */
+  .filterSection::-webkit-scrollbar {
+    display: none;
+  }
   .productList {
     display: grid;
     grid-template-columns: 1fr;
