@@ -94,14 +94,18 @@ const ProductsPage = () => {
           className={styles.logo}
           quality={100}
         />
-        <h1 className={styles.title}>รายการสินค้า</h1>
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-          className={styles.searchBox}
-        />
+        <div>
+          <h1 className={styles.title}>รายการสินค้า</h1>
+          <input
+            type="text"
+            placeholder="ค้นหาชื่อสินค้า, ยี่ห้อสินค้า..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className={styles.searchBox}
+          />
+      
+        </div>
+        <div></div>
       </header>
       <nav className={styles.nav}>
         <button
@@ -120,7 +124,7 @@ const ProductsPage = () => {
           className={activeTab === 'basket' ? styles.activeTab : styles.tab}
           onClick={() => setActiveTab('basket')}
         >
-          Basket
+          ตะกร้าสินค้า
         </button>
       </nav>
       <div className={styles.content}>

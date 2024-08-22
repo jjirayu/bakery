@@ -73,9 +73,17 @@ const exportToCSV = (basket) => {
   const link = document.createElement('a');
   link.href = url;
   link.setAttribute('download', 'basket.csv');
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+
+  document.body.appendChild(link); // Ensure the link is appended to the body
+  link.click(); // Simulate a click on the link
+
+  // Safely remove the link after the download is triggered
+  if (link.parentNode) {
+    link.parentNode.removeChild(link);
+  } else {
+    console.warn("The link element was not found in the document after appending.");
+  }
 };
+
 
 export default Basket;

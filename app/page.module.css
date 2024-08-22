@@ -12,14 +12,14 @@
 }
 
 .logo {
-  width: 150px; /* Increased logo width */
-  height: 150px; /* Increased logo height */
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  object-fit: cover; /* Ensure the image covers the entire element without losing aspect ratio */
+  object-fit: cover;
 }
 
 .title {
-  font-size: 1.5rem; /* Decrease title font size */
+  font-size: 1.5rem;
   margin-top: 10px;
   margin-bottom: 20px;
 }
@@ -30,13 +30,14 @@
   padding: 10px;
   font-size: 1rem;
   margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 .nav {
   display: flex;
   justify-content: center;
   margin: 20px 0;
-  flex-wrap: wrap; /* Allow wrapping on small screens */
+  flex-wrap: wrap;
 }
 
 .tab {
@@ -47,7 +48,7 @@
   border: none;
   border-radius: 4px;
   margin: 5px 10px;
-  font-size: 0.9rem; /* Make the font size smaller */
+  font-size: 0.9rem;
 }
 
 .activeTab {
@@ -65,6 +66,8 @@
 .filterSection {
   width: 200px;
   margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .filterSection button {
@@ -72,7 +75,7 @@
   width: 100%;
   margin-bottom: 10px;
   padding: 10px;
-  background-color: #0070f3;
+  background-color: white;
   color: white;
   border: none;
   border-radius: 4px;
@@ -81,8 +84,8 @@
 
 .productList {
   display: flex;
-  flex-direction: column; /* Change to column for mobile screens */
-  gap: 20px;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .productCard {
@@ -91,12 +94,12 @@
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Full width on mobile screens */
+  width: 100%;
   box-sizing: border-box;
 }
 
 .productName {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
@@ -116,6 +119,7 @@
   align-items: center;
   gap: 10px;
 }
+
 .quantityButton, .addButton {
   padding: 5px 10px;
   border: none;
@@ -174,161 +178,32 @@
   background-color: #005bb5;
 }
 
-/* Add this section to your existing CSS */
-.filterSection {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-  gap: 10px;
-}
-
-.filterButton {
-  padding: 10px 15px;
-  border: none;
-  background-color: #0070f3;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.filterButton:hover {
-  background-color: #005bb5;
-}
-
-/* Adjust the product list to accommodate the filter section */
-.productList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-
 /* Media Queries for Responsive Design */
-/* Mobile Styles */
-@media (max-width: 767px) {
-  .container {
-    padding: 10px;
-  }
-
+@media (min-width: 600px) {
   .header {
-    text-align: center;
-    flex-direction: column;
-  }
-
-  .logo {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .title {
-    font-size: 24px;
-    margin-top: 10px;
+    margin: 0;
   }
 
   .searchBox {
-    width: 100%;
-    margin: 10px 0;
-    padding: 8px;
-    font-size: 16px;
+    margin: 0;
   }
 
-  .nav {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+  .productSection {
+    flex-direction: row;
   }
 
-  .tab,
-  .activeTab {
-    font-size: 16px;
-    padding: 10px;
-    flex: 1;
-    text-align: center;
-  }
-
-  .content {
-    padding: 0;
-  }
-
-  .filterSection {
-    display: flex;
-    overflow-x: auto;
-    margin-bottom: 15px;
-    padding: 5px 0;
-  }
-
-  .filterButton {
-    flex: 0 0 auto;
-    font-size: 14px;
-    padding: 8px 10px;
-    margin-right: 5px;
-    white-space: nowrap;
-  }
-
-  /* Hide horizontal scrollbar */
-  .filterSection::-webkit-scrollbar {
-    display: none;
-  }
   .productList {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
   .productCard {
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
-
-  .productImage {
-    width: 100%;
-    height: auto;
-  }
-
-  .productQuantity {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-  }
-
-  .quantityButton {
-    font-size: 18px;
-    padding: 5px 10px;
-  }
-
-  .addButton {
-    font-size: 14px;
-    padding: 8px 12px;
-    margin-left: 10px;
-  }
-
-  .aboutUs {
-    padding: 15px;
-    font-size: 14px;
-  }
-
-  .basketContainer {
-    padding: 15px;
-  }
-
-  .basketItem {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .total {
-    font-size: 18px;
-    margin-top: 15px;
-    text-align: center;
-  }
-
-  .exportButton {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
+    width: calc(25% - 20px); /* 4 items per row */
   }
 }
