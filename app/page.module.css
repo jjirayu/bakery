@@ -206,30 +206,124 @@
 
 
 /* Media Queries for Responsive Design */
-@media (min-width: 600px) {
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .container {
+    padding: 10px;
+  }
+
   .header {
-    flex-direction: row;
-    justify-content: space-between;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
   }
 
   .title {
-    margin: 0;
+    font-size: 24px;
+    margin-top: 10px;
   }
 
   .searchBox {
-    margin: 0;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 16px;
   }
 
-  .productSection {
-    flex-direction: row;
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  .tab,
+  .activeTab {
+    font-size: 16px;
+    padding: 10px;
+    flex: 1;
+    text-align: center;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .filterSection {
+    display: flex;
+    overflow-x: scroll;
+    margin-bottom: 15px;
+  }
+
+  .filterButton {
+    flex: 0 0 auto;
+    font-size: 14px;
+    padding: 8px 12px;
+    margin-right: 8px;
+    white-space: nowrap;
   }
 
   .productList {
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .productCard {
-    width: calc(33.333% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+
+  .productImage {
+    width: 100%;
+    height: auto;
+  }
+
+  .productQuantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .quantityButton {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+
+  .addButton {
+    font-size: 14px;
+    padding: 8px 12px;
+    margin-left: 10px;
+  }
+
+  .aboutUs {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .basketContainer {
+    padding: 15px;
+  }
+
+  .basketItem {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .total {
+    font-size: 18px;
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .exportButton {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
   }
 }
