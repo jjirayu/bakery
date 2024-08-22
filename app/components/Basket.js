@@ -3,7 +3,7 @@
 import React from 'react';
 import styles from './Basket.module.css';
 
-const Basket = ({ basket }) => {
+const Basket = ({ basket, updateQuantity }) => {
   // Calculate total value for each item and total basket amount
   const basketWithTotals = basket.map(item => ({
     ...item,
@@ -11,6 +11,11 @@ const Basket = ({ basket }) => {
   }));
 
   const totalAmount = basketWithTotals.reduce((acc, item) => acc + item.totalValue, 0);
+
+  // Handle quantity change when + or - is clicked
+  const handleQuantityChange = (itemName, delta) => {
+    updateQuantity(itemName, delta);
+  };
 
   return (
     <div className={styles.basketContainer}>
@@ -20,6 +25,20 @@ const Basket = ({ basket }) => {
           <li key={index} className={styles.basketItem}>
             <div className={styles.basketItemInfo}>
               {item.name} จำนวน: {item.quantity} ชิ้น x ราคา {item.price} = ฿{item.totalValue.toFixed(2)}
+            </div>
+            <div className={styles.quantityControls}>
+              <button
+                className={styles.quantityButton}
+                onClick={() => handleQuantityChange(item.name, -1)}
+              >
+                -
+              </button>
+              <button
+                className={styles.quantityButton}
+                onClick={() => handleQuantityChange(item.name, 1)}
+              >
+                +
+              </button>
             </div>
           </li>
         ))}

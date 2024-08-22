@@ -7,29 +7,29 @@ import initialProducts from './productsData';
 import debounce from 'lodash.debounce';
 import Basket from './components/Basket';
 import Image from 'next/image';
+
 const ProductsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState('products');
   const [products, setProducts] = useState(initialProducts);
   const [filteredProducts, setFilteredProducts] = useState(initialProducts);
   const [basket, setBasket] = useState([]);
-  const [filterType, setFilterType] = useState(''); // New state for filter type
+  const [selectedType, setSelectedType] = useState('');
 
   useEffect(() => {
     const debouncedSearch = debounce(() => {
-      setFilteredProducts(
-        products.filter(product =>
-          product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-          (filterType ? product.type === filterType : true)
-        )
+      const filtered = products.filter(product =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+        (selectedType ? product.type === selectedType : true)
       );
+      setFilteredProducts(filtered);
     }, 300);
 
     debouncedSearch();
     return () => {
       debouncedSearch.cancel();
     };
-  }, [searchTerm, products, filterType]);
+  }, [searchTerm, selectedType, products]);
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
@@ -56,15 +56,27 @@ const ProductsPage = () => {
 
     setBasket(updatedBasket);
 
-    // Reset the product quantity to 1 after adding to basket
     const updatedProducts = products.map(p =>
       p.name === product.name ? { ...p, quantity: 1 } : p
     );
     setProducts(updatedProducts);
   };
 
-  const handleFilterChange = (type) => {
-    setFilterType(type);
+  const handleFilterType = (type) => {
+    setSelectedType(type);
+  };
+
+  // Updated function to remove items with 0 quantity
+  const handleUpdateQuantity = (productName, delta) => {
+    const updatedBasket = basket
+      .map(item =>
+        item.name === productName
+          ? { ...item, quantity: item.quantity + delta }
+          : item
+      )
+      .filter(item => item.quantity > 0); // Remove items with 0 quantity
+
+    setBasket(updatedBasket);
   };
 
   return (
@@ -113,14 +125,13 @@ const ProductsPage = () => {
       </nav>
       <div className={styles.content}>
         {activeTab === 'products' && (
-          <div className={styles.productSection}>
+          <>
             <div className={styles.filterSection}>
-              <h3>Filter by Type</h3>
-              <button onClick={() => handleFilterChange('')}>All</button>
-              <button onClick={() => handleFilterChange('บรรจุภัณฑ์')}>บรรจุภัณฑ์</button>
-              <button onClick={() => handleFilterChange('ของสด')}>ของสด</button>
-              <button onClick={() => handleFilterChange('เครื่องครัว')}>เครื่องครัว</button>
-              <button onClick={() => handleFilterChange('วัตถุดิบ')}>วัตถุดิบ</button>
+              <button className={styles.filterButton} onClick={() => handleFilterType('')}>All</button>
+              <button className={styles.filterButton} onClick={() => handleFilterType('บรรจุภัณฑ์')}>บรรจุภัณฑ์</button>
+              <button className={styles.filterButton} onClick={() => handleFilterType('ของสด')}>ของสด</button>
+              <button className={styles.filterButton} onClick={() => handleFilterType('เครื่องครัว')}>เครื่องครัว</button>
+              <button className={styles.filterButton} onClick={() => handleFilterType('วัตถุดิบ')}>วัตถุดิบ</button>
             </div>
             <div className={styles.productList}>
               {filteredProducts.map((product, index) => (
@@ -152,7 +163,7 @@ const ProductsPage = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </>
         )}
         {activeTab === 'about' && (
           <div className={styles.aboutUs}>
@@ -161,7 +172,7 @@ const ProductsPage = () => {
           </div>
         )}
         {activeTab === 'basket' && (
-          <Basket basket={basket} />
+          <Basket basket={basket} updateQuantity={handleUpdateQuantity} />
         )}
       </div>
     </div>
