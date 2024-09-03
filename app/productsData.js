@@ -23,7 +23,11 @@ const initialProducts = [
     { name: 'ถ้วยฟอยด์ 4003', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ถ้วย4003.jpg'},
     { name: 'ถ้วยฟอยด์ 4003 ชมพู', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ถ้วย4003 หินอ่อนชมพู.jpg'},
     { name: 'ถ้วยฟอยด์ 4003 ลายวัว', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ถ้วย4003 ลายวัว.jpg'},
-    { name: 'ถ้วยฟอยด์ 4003 ลายวัว', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ถ้วย4003 ลายวัวชมพู.jpg'},
+    { name: 'ถ้วยฟอยด์ 4003 ลายวัวชมพู', price: '155฿',type:'อื่นๆ', quantity: 1, image: '/images/ถ้วย4003 ลายวัวชมพู.jpg'},
+    { name: 'ผงโกโก้ริช สีเข้ม 500 ก.', price: '190฿',type:'อื่นๆ', quantity: 1, image: '/images/โกโก้ริช สีเข้ม 500 ก.jpeg'},
+    { name: 'ผงโกโก้ริช สีปกติ 500 ก.', price: '190฿',type:'อื่นๆ', quantity: 1, image: '/images/โกโก้ริช สีอ่อน 500 ก.jpeg'},
+    { name: 'ผงโกโก้ทิวลิป สีเข้ม 440 ก.', price: '180฿',type:'อื่นๆ', quantity: 1, image: '/images/ผงโกโก้ทิวลิป สีเข้ม 440 ก.jpeg'},
+    { name: 'ผงโกโก้แวนฮูเต็น 400 ก.', price: '180฿',type:'อื่นๆ', quantity: 1, image: '/images/ผงโกโก้ทิวลิป สีเข้ม 440 ก.jpeg'},
     
   ];
   

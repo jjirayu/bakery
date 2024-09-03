@@ -1,9 +1,15 @@
-'use client';
-
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Basket.module.css';
 
 const Basket = ({ basket, updateQuantity }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    address: '',
+    email: ''
+  });
+
   // Calculate total value for each item and total basket amount
   const basketWithTotals = basket.map(item => ({
     ...item,
@@ -12,9 +18,52 @@ const Basket = ({ basket, updateQuantity }) => {
 
   const totalAmount = basketWithTotals.reduce((acc, item) => acc + item.totalValue, 0);
 
-  // Handle quantity change when + or - is clicked
-  const handleQuantityChange = (itemName, delta) => {
-    updateQuantity(itemName, delta);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    const dataToSave = {
+      ...formData,
+      items: basketWithTotals.map(item => ({
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price,
+        totalValue: item.totalValue.toFixed(2)
+      }))
+    };
+  
+    try {
+      const response = await fetch('/api/save-data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataToSave)
+      });
+  
+      const result = await response.json();
+      console.log('Response from server:', result);
+  
+      if (response.ok) {
+        console.log('Data saved successfully:', dataToSave);
+      } else {
+        console.error('Failed to save data:', result);
+      }
+    } catch (error) {
+      console.error('Error saving data:', error);
+    }
+  
+    setShowModal(false);
+    setFormData({
+      name: '',
+      phone: '',
+      address: '',
+      email: ''
+    });
   };
 
   return (
@@ -26,19 +75,10 @@ const Basket = ({ basket, updateQuantity }) => {
             <div className={styles.basketItemInfo}>
               {item.name} จำนวน: {item.quantity} ชิ้น x ราคา {item.price} = ฿{item.totalValue.toFixed(2)}
             </div>
-            <div className={styles.quantityControls}>
-              <button
-                className={styles.quantityButton}
-                onClick={() => handleQuantityChange(item.name, -1)}
-              >
-                -
-              </button>
-              <button
-                className={styles.quantityButton}
-                onClick={() => handleQuantityChange(item.name, 1)}
-              >
-                +
-              </button>
+            <div className={styles.quantityButtons}>
+              <button onClick={() => updateQuantity(item.name, -1)}>-</button>
+              <span>{item.quantity}</span>
+              <button onClick={() => updateQuantity(item.name, 1)}>+</button>
             </div>
           </li>
         ))}
@@ -46,44 +86,76 @@ const Basket = ({ basket, updateQuantity }) => {
       <div className={styles.total}>
         Total Amount: ฿{totalAmount.toFixed(2)}
       </div>
-      <button className={styles.exportButton} onClick={() => exportToCSV(basketWithTotals)}>
-        Export to CSV
+      <button className={styles.buyButton} onClick={() => setShowModal(true)}>
+        ซื้อเลย
       </button>
+
+      {showModal && (
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
+            <h3>กรอกรายละเอียดสำหรับการจัดส่ง</h3>
+            <form onSubmit={handleSubmit}>
+              <div className={styles.formGroup}>
+                <label htmlFor="name">Name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="phone">Telephone number:</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="address">Address:</label>
+                <textarea
+                  id="address"
+                  name="address"
+                  value={formData.address}
+                  onChange={handleInputChange}
+                  required
+                ></textarea>
+              </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="email">E-mail:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className={styles.modalButtons}>
+                <button type="submit" className={styles.submitButton}>
+                  Submit
+                </button>
+                <button
+                  type="button"
+                  className={styles.cancelButton}
+                  onClick={() => setShowModal(false)}
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
-
-// Function to export basket data to CSV
-const exportToCSV = (basket) => {
-  const header = ['Name', 'Quantity', 'Price', 'Total'];
-  const rows = basket.map(item => [
-    item.name,
-    item.quantity,
-    item.price,
-    `฿${item.totalValue.toFixed(2)}`
-  ]);
-
-  const csvContent = [
-    header.join(','),
-    ...rows.map(e => e.join(','))
-  ].join('\n');
-
-  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.setAttribute('download', 'basket.csv');
-
-  document.body.appendChild(link); // Ensure the link is appended to the body
-  link.click(); // Simulate a click on the link
-
-  // Safely remove the link after the download is triggered
-  if (link.parentNode) {
-    link.parentNode.removeChild(link);
-  } else {
-    console.warn("The link element was not found in the document after appending.");
-  }
-};
-
 
 export default Basket;
