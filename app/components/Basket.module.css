@@ -1,22 +1,85 @@
-/* Add these new styles */
+.basketContainer {
+  padding: 20px;
+  background-color: #f8f9fa; /* Light gray background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.basketList {
+  list-style: none;
+  padding: 0;
+}
+
+.basketItem {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.basketItemInfo {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333; /* Darker text color */
+}
+
+.quantityButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantityButtons button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff; /* Blue color for buttons */
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.quantityButtons button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.buyButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745; /* Green color for the ซื้อเลย button */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.buyButton:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.total {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333; /* Darker text color */
+}
+
 .modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
 }
 
 .modalContent {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
-  width: 90%;
+  width: 100%;
   max-width: 500px;
 }
 
@@ -27,37 +90,36 @@
 .formGroup label {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold;
+  color: #333; /* Darker label color */
 }
 
 .formGroup input,
 .formGroup textarea {
   width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  border-radius: 4px;
+  padding: 10px;
   border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
 }
 
 .modalButtons {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
-.submitButton {
-  background-color: #0070f3;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
+.submitButton,
 .cancelButton {
-  background-color: #ccc;
-  color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  background-color: #007bff; /* Blue color for submit and cancel buttons */
+  color: white;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.submitButton:hover,
+.cancelButton:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }

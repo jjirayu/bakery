@@ -1,20 +1,20 @@
 export const data = {
-  "name": "Jirayu C",
+  "name": "Jirayu Ccaaa",
   "phone": "0855532167",
   "address": "2/7 Chuanchen village Kanjanavanit rd.",
-  "email": "jjirayu@hotmail.com",
+  "email": "pingling@hotmail.com",
   "items": [
     {
-      "name": "แป้งพัด",
+      "name": "แป้งหงส์ขาว",
       "quantity": 3,
-      "price": "49฿",
-      "totalValue": "147.00"
+      "price": "41฿",
+      "totalValue": "123.00"
     },
     {
-      "name": "แป้งบัวแดง",
-      "quantity": 3,
-      "price": "38฿",
-      "totalValue": "114.00"
+      "name": "แป้งพัด",
+      "quantity": 2,
+      "price": "49฿",
+      "totalValue": "98.00"
     }
   ]
 };
