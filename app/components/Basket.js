@@ -22,7 +22,6 @@ const Basket = ({ basket, updateQuantity }) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
   
@@ -65,7 +64,7 @@ const Basket = ({ basket, updateQuantity }) => {
       email: ''
     });
   };
-
+  
   return (
     <div className={styles.basketContainer}>
       <h2>Basket</h2>
