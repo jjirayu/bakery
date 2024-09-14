@@ -36,7 +36,7 @@ const Basket = ({ basket, updateQuantity }) => {
     };
   
     try {
-      const response = await fetch('/api/save-data', {
+      const response = await fetch('/api/saveData', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
