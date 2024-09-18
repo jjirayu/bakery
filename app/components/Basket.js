@@ -7,7 +7,9 @@ const Basket = ({ basket, updateQuantity }) => {
     name: '',
     phone: '',
     address: '',
-    email: ''
+    email: '',
+    deliveryDate: '', // New state for delivery date
+    deliveryTime: ''  // New state for delivery time slot
   });
 
   // Calculate total value for each item and total basket amount
@@ -22,11 +24,20 @@ const Basket = ({ basket, updateQuantity }) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
+    // Get current date and time for order submission
+    const currentDateTime = new Date().toLocaleString();
+
+    // Combine delivery date and time into a single field
+    const deliveryDateTime = `${formData.deliveryDate} ${formData.deliveryTime}`;
+
     const dataToSave = {
       ...formData,
+      orderDate: currentDateTime, // Add the current date and time to the order
+      deliveryDateTime,           // Save combined delivery date and time
       items: basketWithTotals.map(item => ({
         name: item.name,
         quantity: item.quantity,
@@ -34,7 +45,7 @@ const Basket = ({ basket, updateQuantity }) => {
         totalValue: item.totalValue.toFixed(2)
       }))
     };
-  
+
     try {
       const response = await fetch('/api/saveData', {
         method: 'POST',
@@ -43,10 +54,10 @@ const Basket = ({ basket, updateQuantity }) => {
         },
         body: JSON.stringify(dataToSave)
       });
-  
+
       const result = await response.json();
       console.log('Response from server:', result);
-  
+
       if (response.ok) {
         console.log('Data saved successfully:', dataToSave);
       } else {
@@ -55,16 +66,18 @@ const Basket = ({ basket, updateQuantity }) => {
     } catch (error) {
       console.error('Error saving data:', error);
     }
-  
+
     setShowModal(false);
     setFormData({
       name: '',
       phone: '',
       address: '',
-      email: ''
+      email: '',
+      deliveryDate: '', // Reset delivery date
+      deliveryTime: ''  // Reset delivery time
     });
   };
-  
+
   return (
     <div className={styles.basketContainer}>
       <h2>Basket</h2>
@@ -137,6 +150,32 @@ const Basket = ({ basket, updateQuantity }) => {
                   required
                 />
               </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="deliveryDate">Delivery Date:</label>
+                <input
+                  type="date"
+                  id="deliveryDate"
+                  name="deliveryDate"
+                  value={formData.deliveryDate}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="deliveryTime">Delivery Time:</label>
+                <select
+                  id="deliveryTime"
+                  name="deliveryTime"
+                  value={formData.deliveryTime}
+                  onChange={handleInputChange}
+                  required
+                >
+                  <option value="">Select a time</option>
+                  <option value="8:00-12:00">8:00-12:00</option>
+                  <option value="12:00-16:00">12:00-16:00</option>
+                  <option value="16:00-20:00">16:00-20:00</option>
+                </select>
+              </div>
               <div className={styles.modalButtons}>
                 <button type="submit" className={styles.submitButton}>
                   Submit
@@ -158,3 +197,4 @@ const Basket = ({ basket, updateQuantity }) => {
 };
 
 export default Basket;
+
