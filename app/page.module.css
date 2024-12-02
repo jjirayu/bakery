@@ -1,9 +1,43 @@
+/* Container */
 .container {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Top Navigation for About Us */
+.topNav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+}
+
+.topTab {
+  background-color: transparent;
+  border: none;
+  color: #0070f3; /* Default blue for inactive tabs */
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease;
+}
+
+.topTab:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+
+.activeTab {
+  background-color: #097df9; /* Light blue background for active tab */
+  color: white; /* White text for active tab */
+  font-weight: bold;
+  text-decoration: none; /* No underline on active tab */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* Header */
 .header {
   display: flex;
   flex-direction: column;
@@ -24,6 +58,7 @@
   margin-bottom: 20px;
 }
 
+/* Search Box */
 .searchBox {
   width: 100%;
   max-width: 300px;
@@ -33,53 +68,73 @@
   border-radius: 8px;
 }
 
+/* Navigation */
 .nav {
   display: flex;
   justify-content: center;
   margin: 20px 0;
   flex-wrap: wrap;
+  gap: 15px; /* Adjusted spacing between buttons */
 }
 
-.tab {
-  padding: 5px 10px;
+
+.largeTab {
+  padding: 15px 30px; /* Enlarged padding for "Products" and "Basket" */
+  font-size: 1.25rem; /* Larger font size */
+  background-color: transparent;
+  color: #1582e1; /* Default gray color for inactive tabs */
+  border: 2px solid #ddd; /* Light gray border for inactive */
+  border-radius: 8px;
   cursor: pointer;
-  background-color: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  margin: 5px 10px;
-  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-decoration: none; /* Remove underline */
 }
 
-.activeTab {
-  background-color: #005bb5;
-}
 
+
+
+
+/* Content */
 .content {
   margin-top: 20px;
 }
 
+/* Products Section */
 .productSection {
   display: flex;
 }
 
 .filterSection {
-  width: 200px;
-  margin-right: 20px;
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.filterSection button {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: white;
-  color: white;
-  border: none;
-  border-radius: 4px;
+.filterButton {
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.filterButton:hover {
+  background-color: #e0e0e0;
+  border-color: #494949;
+}
+
+.filterButton.active {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #0056b3;
+}
+
+.filterButton:focus {
+  outline: none;
+  box-shadow: 0 0 5px #007bff;
 }
 
 .productList {
@@ -99,7 +154,7 @@
 }
 
 .productName {
-  font-size: 1.5rem;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 
@@ -120,7 +175,8 @@
   gap: 10px;
 }
 
-.quantityButton, .addButton {
+.quantityButton,
+.addButton {
   padding: 5px 10px;
   border: none;
   background-color: #0070f3;
@@ -133,6 +189,7 @@
   margin-left: 10px;
 }
 
+/* About Us Section */
 .aboutUs {
   padding: 20px;
   background-color: white;
@@ -140,6 +197,7 @@
   border-radius: 8px;
 }
 
+/* Basket Section */
 .basketContainer {
   padding: 20px;
   background-color: white;
@@ -178,7 +236,7 @@
   background-color: #005bb5;
 }
 
-/* Media Queries for Responsive Design */
+/* Media Queries */
 @media (min-width: 600px) {
   .header {
     flex-direction: row;
@@ -204,6 +262,6 @@
   }
 
   .productCard {
-    width: calc(25% - 20px); /* 4 items per row */
+    width: calc(25% - 20px);
   }
 }

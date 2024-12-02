@@ -28,6 +28,8 @@ const initialProducts = [
     { name: 'ผงโกโก้ริช สีปกติ 500 ก.', price: '190฿',type:'อื่นๆ', quantity: 1, image: '/images/โกโก้ริช สีอ่อน 500 ก.jpeg'},
     { name: 'ผงโกโก้ทิวลิป สีเข้ม 440 ก.', price: '180฿',type:'อื่นๆ', quantity: 1, image: '/images/ผงโกโก้ทิวลิป สีเข้ม 440 ก.jpeg'},
     { name: 'ผงโกโก้แวนฮูเต็น 400 ก.', price: '180฿',type:'อื่นๆ', quantity: 1, image: '/images/ผงโกโก้ทิวลิป สีเข้ม 440 ก.jpeg'},
+    { name: 'ถ้วยฟอย 4001 ไม่มีลาย', price: '32฿',type:'อื่นๆ', quantity: 1, image: '/images/ผงโกโก้ทิวลิป สีเข้ม 440 ก.jpeg'},
+    { name: 'ถ้วยฟอย 4001 ชมพูจุด', price: '32฿',type:'อื่นๆ', quantity: 1, image: '/images/ฟอยไม่มีลาย.png'},
     
   ];
   
