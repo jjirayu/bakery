@@ -262,14 +262,14 @@
     justify-content: center;
     max-width: 90%; /* Make it take most of the screen width */
     padding: 5px; /* Adjust padding for better fit */
-    margin-left: 5px; /* Remove the left margin for better centering */
+    margin-left: 10px; /* Remove the left margin for better centering */
   }
   .searchBox {
     width: 80%; /* Adjust width to fit smaller screens */
     max-width: 400px; /* Set a maximum width to prevent it from being too large */
     padding: 10px;
     font-size: 1rem; /* Smaller font size for mobile */
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     border-radius: 8px;
   }
   .productList {
