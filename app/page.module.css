@@ -244,7 +244,7 @@
   .header {
     flex-direction: column; /* Stack the content vertically */
     align-items: center; /* Center align all elements */
-    padding: 10px 0; /* Reduce space above and below the logo */
+    padding: 0px 0; /* Reduce space above and below the logo */
     gap: 5px; /* Adjust space between logo and title/search box */
   }
 
