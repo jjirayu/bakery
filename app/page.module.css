@@ -154,8 +154,9 @@
 
 .productList {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .productCard {
@@ -166,6 +167,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   box-sizing: border-box;
+  width: calc(25% - 20px);
 }
 
 .productName {
@@ -210,6 +212,7 @@
 }
 
 
+
 .total {
   margin-top: 15px;
   font-size: 1.5rem;
@@ -232,17 +235,17 @@
 }
 
 /* Media Queries */
-@media (min-width: 600px) {
+@media (max-width: 600px) {
+
   .header {
     flex-direction: column; /* Stack the content vertically */
     align-items: center; /* Center align all elements */
   }
+
   .logo {
     margin-bottom: 20px; /* Space between logo and title/search box */
   }
-  .title {
-    margin: 0;
-  }
+
   .titleSearchContainer {
     display: flex;
     flex-direction: column; /* Stack title and search box vertically */
@@ -250,20 +253,59 @@
     justify-content: center;
   }
   .searchBox {
-    margin: 0;
+    width: 80%; /* Adjust width to fit smaller screens */
+    max-width: 400px; /* Set a maximum width to prevent it from being too large */
+    padding: 10px;
+    font-size: 1rem; /* Smaller font size for mobile */
+    margin-bottom: 20px;
+    border-radius: 8px;
   }
-
-  .productSection {
-    flex-direction: row;
-  }
-
   .productList {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: flex;
+    flex-direction: column; /* Stack product cards vertically */
+    gap: 20px; /* Add some space between each product card */
   }
 
   .productCard {
-    width: calc(25% - 20px);
+    width: 100%; /* Make each product card take up the full width */
+    box-sizing: border-box; /* Ensure padding and borders are included in width calculation */
+  }
+
+  .productImage {
+    width: 100%; /* Make image responsive and fit within the card */
+    height: auto;
+  }
+  .filterSection {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to a new line if space is tight */
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 20px;
+  }
+  
+  .filterButton {
+    padding: 5px 10px; /* Smaller padding */
+    font-size: 14px; /* Smaller font size */
+    border: 2px solid #ddd;
+    background-color: #f9f9f9;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .filterButton:hover {
+    background-color: #e0e0e0;
+    border-color: #0070f3;
+  }
+  
+  .filterButton.active {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #0056b3;
+  }
+  
+  .filterButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px #007bff;
   }
 }
