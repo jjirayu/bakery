@@ -237,7 +237,7 @@
 /* Media Queries */
 @media (max-width: 600px) {
   .container {
-    padding: 5px;
+    padding: 2px;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -245,7 +245,7 @@
     flex-direction: column; /* Stack the content vertically */
     align-items: center; /* Center align all elements */
     padding: 0px 0; /* Reduce space above and below the logo */
-    gap: 5px; /* Adjust space between logo and title/search box */
+    gap: 2px; /* Adjust space between logo and title/search box */
   }
 
   .logo {
