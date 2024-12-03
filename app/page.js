@@ -74,7 +74,7 @@ const ProductsPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <header className={styles.header}>
+      <div className={styles.header}>
         <Image
           src="/images/logo.png"
           alt="Logo"
@@ -93,7 +93,7 @@ const ProductsPage = () => {
             className={styles.searchBox}
           />
         </div>
-      </header>
+      </div>
 
       <nav className={styles.nav}>
         <button
