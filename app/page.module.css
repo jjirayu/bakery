@@ -264,7 +264,7 @@
     max-width: 400px; /* Set a maximum width to prevent it from being too large */
     padding: 10px;
     font-size: 1rem; /* Smaller font size for mobile */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-radius: 8px;
   }
   .productList {
