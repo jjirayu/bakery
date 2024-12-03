@@ -81,38 +81,35 @@ const ProductsPage = () => {
 
   return (
     <div className={styles.container}>
+      <button
+        className={activeTab === 'about' ? styles.activeTab : styles.topTab}
+        onClick={() => setActiveTab('about')}>
+        เกี่ยวกับเรา
+      </button>
       <Head>
         <title>รายการสินค้า</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <header className={styles.header}>
-  <div className={styles.topNav}>
-    <button
-      className={activeTab === 'about' ? styles.activeTab : styles.topTab}
-      onClick={() => setActiveTab('about')}
-    >
-      About Us
-    </button>
-  </div>
-  <Image
-    src="/images/logo.png"
-    alt="Logo"
-    width={150}
-    height={150}
-    className={styles.logo}
-    quality={100}
-  />
-  <div>
-    <h1 className={styles.title}>รายการสินค้า</h1>
-    <input
-      type="text"
-      placeholder="ค้นหาชื่อสินค้า, ยี่ห้อสินค้า..."
-      value={searchTerm}
-      onChange={handleSearchChange}
-      className={styles.searchBox}
-    />
-  </div>
-</header>
+    <header className={styles.header}>
+      <Image
+        src="/images/logo.png"
+        alt="Logo"
+        width={150}
+        height={150}
+        className={styles.logo}
+        quality={100}
+      />
+      <div className={styles.titleSearchContainer}>
+        <h1 className={styles.title}>รายการสินค้า</h1>
+        <input
+          type="text"
+          placeholder="ค้นหาชื่อสินค้า, ยี่ห้อสินค้า..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className={styles.searchBox}
+        />
+      </div>
+    </header>
 
 <nav className={styles.nav}>
   <button

@@ -40,15 +40,33 @@
 /* Header */
 .header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Space out logo and middle container */
   padding: 20px 0;
 }
-
+.headerContent {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px; /* Space between logo, title, and search box */
+  text-align: center;
+}
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.middleContainer {
+  display: flex;
+  flex-direction: column; /* Stack title and search box vertically */
+  align-items: center; /* Center align within the middle container */
+  flex-grow: 1; /* Take up remaining space to center this container */
+}
 .logo {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  flex-shrink: 0; /* Prevent logo from shrinking */
   object-fit: cover;
 }
 
