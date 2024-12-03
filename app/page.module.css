@@ -236,7 +236,11 @@
 
 /* Media Queries */
 @media (max-width: 600px) {
-
+  .container {
+    padding: 5px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   .header {
     flex-direction: column; /* Stack the content vertically */
     align-items: center; /* Center align all elements */
