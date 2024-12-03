@@ -234,14 +234,21 @@
 /* Media Queries */
 @media (min-width: 600px) {
   .header {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column; /* Stack the content vertically */
+    align-items: center; /* Center align all elements */
   }
-
+  .logo {
+    margin-bottom: 20px; /* Space between logo and title/search box */
+  }
   .title {
     margin: 0;
   }
-
+  .titleSearchContainer {
+    display: flex;
+    flex-direction: column; /* Stack title and search box vertically */
+    align-items: center; /* Center align the title and search box */
+    justify-content: center;
+  }
   .searchBox {
     margin: 0;
   }
