@@ -262,7 +262,7 @@
     justify-content: center;
     max-width: 90%; /* Make it take most of the screen width */
     padding: 5px; /* Adjust padding for better fit */
-    margin-left: 0; /* Remove the left margin for better centering */
+    margin-left: 5px; /* Remove the left margin for better centering */
   }
   .searchBox {
     width: 80%; /* Adjust width to fit smaller screens */
