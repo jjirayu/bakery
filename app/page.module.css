@@ -5,6 +5,51 @@
   margin: 0 auto;
 }
 
+.header {
+  display: flex;
+  align-items: center; /* Vertically center logo and title/search box */
+  justify-content: center; /* Center content horizontally in the header */
+  padding: 20px 0;
+  gap: 20px; /* Adjust space between logo and title/search box */
+}
+.logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.titleSearchContainer {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  width: 100%; /* Adjust as needed */
+  max-width: 700px; /* Adjust for your desired container size */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 10px; /* Add padding for more space */
+  margin-left: 5%;
+}
+
+.title {
+  font-size: 2rem; 
+  margin-bottom: 10px; 
+}
+
+.searchBox {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 15px; /* Adjusted spacing between buttons */
+}
+
 /* Top Navigation for About Us */
 .topNav {
   display: flex;
@@ -38,87 +83,41 @@
 }
 
 /* Header */
-.header {
-  display: flex;
-  align-items: center; /* Vertically center logo and title/search box */
-  justify-content: center; /* Center content horizontally in the header */
-  padding: 20px 0;
-  gap: 20px; /* Adjust space between logo and title/search box */
-}
 
 .titleContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.titleSearchContainer {
-  display: flex;
-  flex-direction: column; /* Or row if the title and search box are side by side */
-  align-items: center; /* Center items within the container */
-  justify-content: center; /* Center the content vertically if needed */
-  width: 100%; /* Adjust as needed */
-  max-width: 700px; /* Adjust for your desired container size */
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 10px; /* Add padding for more space */
-  margin-left: 5%;
-}
-.logo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  flex-shrink: 0; /* Prevent logo from shrinking */
-  object-fit: cover;
-}
-
-.title {
-  font-size: 2rem; /* Adjust font size */
-  margin-bottom: 20px; /* Space below the title */
-}
-
-/* Search Box */
-.searchBox {
-  width: 100%;
-  max-width: 500px;
-  padding: 10px;
-  font-size: 1rem;
-  margin-bottom: 20px;
-  border-radius: 8px;
-}
-
-/* Navigation */
-.nav {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-  flex-wrap: wrap;
-  gap: 15px; /* Adjusted spacing between buttons */
-}
-
 
 .largeTab {
-  padding: 15px 30px; /* Enlarged padding for "Products" and "Basket" */
-  font-size: 1.25rem; /* Larger font size */
+  padding: 15px 30px; /* Ensures buttons are larger with more padding */
+  font-size: 1.5rem; /* Larger font size for better visibility */
   background-color: transparent;
-  color: #1582e1; /* Default gray color for inactive tabs */
+  color: #1582e1; /* Default blue color for inactive tabs */
   border: 2px solid #ddd; /* Light gray border for inactive */
-  border-radius: 8px;
+  border-radius: 8px; /* Rounded corners */
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none; /* Remove underline */
+  transition: all 0.3s ease; /* Smooth hover effect */
 }
 
+.largeTab:hover {
+  background-color: #f0f8ff; /* Subtle hover effect */
+  border-color: #0056b3; /* Darker border on hover */
+  color: #0056b3; /* Change text color on hover */
+}
 
-
+.activeTab {
+  background-color: #097df9; /* Light blue background for active tab */
+  color: white; /* White text for active tab */
+  font-size: 1.25rem; /* Ensure active tab size matches the larger button size */
+  border-radius: 8px; /* Maintain rounded corners */
+}
 
 
 /* Content */
 .content {
   margin-top: 20px;
-}
-
-/* Products Section */
-.productSection {
-  display: flex;
 }
 
 .filterSection {
@@ -131,7 +130,6 @@
   padding: 10px 20px;
   border: 2px solid #ddd;
   background-color: #f9f9f9;
-  color: #333;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -139,8 +137,8 @@
 }
 
 .filterButton:hover {
-  background-color: #e0e0e0;
-  border-color: #494949;
+  background-color: #e6f0ff;
+  border-color: #0070f3;
 }
 
 .filterButton.active {
@@ -173,6 +171,7 @@
 .productName {
   font-size: 20px;
   margin-bottom: 10px;
+  
 }
 
 .productImage {
@@ -184,10 +183,12 @@
 .productPrice {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  
 }
 
 .productQuantity {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
 }
@@ -200,37 +201,14 @@
   color: white;
   cursor: pointer;
   border-radius: 4px;
+  font-size: 1rem;
+
 }
 
 .addButton {
   margin-left: 10px;
 }
 
-/* About Us Section */
-.aboutUs {
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-/* Basket Section */
-.basketContainer {
-  padding: 20px;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-}
-
-.basketList {
-  list-style: none;
-  padding: 0;
-}
-
-.basketItem {
-  padding: 10px 0;
-  border-bottom: 1px solid #ddd;
-}
 
 .total {
   margin-top: 15px;

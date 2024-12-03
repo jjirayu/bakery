@@ -26,114 +26,103 @@ const ProductsPage = () => {
     }, 300);
 
     debouncedSearch();
-    return () => {
-      debouncedSearch.cancel();
-    };
+    return () => debouncedSearch.cancel();
   }, [searchTerm, selectedType, products]);
 
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
+  const handleSearchChange = (e) => setSearchTerm(e.target.value);
 
   const handleQuantityChange = (productName, delta) => {
-    const updatedProducts = products.map(product =>
+    setProducts(products.map(product =>
       product.name === productName
         ? { ...product, quantity: Math.max(0, product.quantity + delta) }
         : product
-    );
-    setProducts(updatedProducts);
+    ));
   };
 
   const handleAddToBasket = (product) => {
-    const updatedBasket = [...basket];
-    const productIndex = updatedBasket.findIndex(item => item.name === product.name);
-
-    if (productIndex !== -1) {
-      updatedBasket[productIndex].quantity += product.quantity;
-    } else {
+    const updatedBasket = basket.map(item =>
+      item.name === product.name
+        ? { ...item, quantity: item.quantity + product.quantity }
+        : item
+    );
+    if (!updatedBasket.find(item => item.name === product.name)) {
       updatedBasket.push({ ...product });
     }
-
     setBasket(updatedBasket);
-
-    const updatedProducts = products.map(p =>
+    setProducts(products.map(p =>
       p.name === product.name ? { ...p, quantity: 1 } : p
-    );
-    setProducts(updatedProducts);
+    ));
   };
 
-  const handleFilterType = (type) => {
-    setSelectedType(type);
-  };
+  const handleFilterType = (type) => setSelectedType(type);
 
-  // Updated function to remove items with 0 quantity
   const handleUpdateQuantity = (productName, delta) => {
-    const updatedBasket = basket
+    setBasket(basket
       .map(item =>
         item.name === productName
           ? { ...item, quantity: item.quantity + delta }
           : item
       )
-      .filter(item => item.quantity > 0); // Remove items with 0 quantity
-
-    setBasket(updatedBasket);
+      .filter(item => item.quantity > 0)
+    );
   };
 
   return (
     <div className={styles.container}>
-      <button
-        className={activeTab === 'about' ? styles.activeTab : styles.topTab}
-        onClick={() => setActiveTab('about')}>
-        เกี่ยวกับเรา
-      </button>
       <Head>
         <title>รายการสินค้า</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-    <header className={styles.header}>
-      <Image
-        src="/images/logo.png"
-        alt="Logo"
-        width={150}
-        height={150}
-        className={styles.logo}
-        quality={100}
-      />
-      <div className={styles.titleSearchContainer}>
-        <h1 className={styles.title}>รายการสินค้า</h1>
-        <input
-          type="text"
-          placeholder="ค้นหาชื่อสินค้า, ยี่ห้อสินค้า..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-          className={styles.searchBox}
-        />
-      </div>
-    </header>
 
-<nav className={styles.nav}>
-  <button
-    className={activeTab === 'products' ? styles.activeTab : styles.largeTab}
-    onClick={() => setActiveTab('products')}
-  >
-    รายการสินค้า
-  </button>
-  <button
-    className={activeTab === 'basket' ? styles.activeTab : styles.largeTab}
-    onClick={() => setActiveTab('basket')}
-  >
-    ตะกร้าสินค้า
-  </button>
-</nav>
+      <header className={styles.header}>
+        <Image
+          src="/images/logo.png"
+          alt="Logo"
+          width={150}
+          height={150}
+          className={styles.logo}
+          quality={100}
+        />
+        <div className={styles.titleSearchContainer}>
+          <h1 className={styles.title}>ค้นหาสินค้า</h1>
+          <input
+            type="text"
+            placeholder="ค้นหาชื่อสินค้า, ยี่ห้อสินค้า..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+            className={styles.searchBox}
+          />
+        </div>
+      </header>
+
+      <nav className={styles.nav}>
+        <button
+          className={activeTab === 'products' ? styles.activeTab : styles.largeTab}
+          onClick={() => setActiveTab('products')}
+        >
+          รายการสินค้า
+        </button>
+        <button
+          className={activeTab === 'basket' ? styles.activeTab : styles.largeTab}
+          onClick={() => setActiveTab('basket')}
+        >
+          ตะกร้าสินค้า
+        </button>
+      </nav>
+
       <div className={styles.content}>
         {activeTab === 'products' && (
           <>
             <div className={styles.filterSection}>
-              <button className={styles.filterButton} onClick={() => handleFilterType('')}>All</button>
-              <button className={styles.filterButton} onClick={() => handleFilterType('บรรจุภัณฑ์')}>บรรจุภัณฑ์</button>
-              <button className={styles.filterButton} onClick={() => handleFilterType('ของสด')}>ของสด</button>
-              <button className={styles.filterButton} onClick={() => handleFilterType('เครื่องครัว')}>เครื่องครัว</button>
-              <button className={styles.filterButton} onClick={() => handleFilterType('วัตถุดิบ')}>วัตถุดิบ</button>
+              {['', 'บรรจุภัณฑ์', 'ของสด', 'เครื่องครัว', 'วัตถุดิบ'].map(type => (
+                <button
+                  key={type}
+                  className={styles.filterButton}
+                  onClick={() => handleFilterType(type)}
+                >
+                  {type || 'All'}
+                </button>
+              ))}
             </div>
             <div className={styles.productList}>
               {filteredProducts.map((product, index) => (
@@ -167,15 +156,7 @@ const ProductsPage = () => {
             </div>
           </>
         )}
-        {activeTab === 'about' && (
-          <div className={styles.aboutUs}>
-            <h2>About Us</h2>
-            <p>This is the About Us section. You can add more information here about your company.</p>
-          </div>
-        )}
-        {activeTab === 'basket' && (
-          <Basket basket={basket} updateQuantity={handleUpdateQuantity} />
-        )}
+        {activeTab === 'basket' && <Basket basket={basket} updateQuantity={handleUpdateQuantity} />}
       </div>
     </div>
   );
