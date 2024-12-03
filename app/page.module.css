@@ -240,17 +240,24 @@
   .header {
     flex-direction: column; /* Stack the content vertically */
     align-items: center; /* Center align all elements */
+    padding: 10px 0; /* Reduce space above and below the logo */
   }
 
   .logo {
     margin-bottom: 20px; /* Space between logo and title/search box */
   }
-
+  .largeTab {
+    padding: 8px 16px; /* Smaller padding for mobile */
+    font-size: 0.9rem; /* Smaller font size for mobile */
+  }
   .titleSearchContainer {
     display: flex;
     flex-direction: column; /* Stack title and search box vertically */
     align-items: center; /* Center align the title and search box */
     justify-content: center;
+    max-width: 90%; /* Make it take most of the screen width */
+    padding: 5px; /* Adjust padding for better fit */
+    margin-left: 0; /* Remove the left margin for better centering */
   }
   .searchBox {
     width: 80%; /* Adjust width to fit smaller screens */
@@ -263,7 +270,7 @@
   .productList {
     display: flex;
     flex-direction: column; /* Stack product cards vertically */
-    gap: 20px; /* Add some space between each product card */
+    gap: 10px; /* Add some space between each product card */
   }
 
   .productCard {
