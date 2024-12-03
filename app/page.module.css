@@ -40,27 +40,27 @@
 /* Header */
 .header {
   display: flex;
-  align-items: center; /* Vertically center content */
-  justify-content: space-between; /* Space out logo and middle container */
+  align-items: center; /* Vertically center logo and title/search box */
+  justify-content: center; /* Center content horizontally in the header */
   padding: 20px 0;
+  gap: 20px; /* Adjust space between logo and title/search box */
 }
-.headerContent {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px; /* Space between logo, title, and search box */
-  text-align: center;
-}
+
 .titleContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.middleContainer {
+.titleSearchContainer {
   display: flex;
-  flex-direction: column; /* Stack title and search box vertically */
-  align-items: center; /* Center align within the middle container */
-  flex-grow: 1; /* Take up remaining space to center this container */
+  flex-direction: column; /* Or row if the title and search box are side by side */
+  align-items: center; /* Center items within the container */
+  justify-content: center; /* Center the content vertically if needed */
+  width: 100%; /* Adjust as needed */
+  max-width: 700px; /* Adjust for your desired container size */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 10px; /* Add padding for more space */
+  margin-left: 5%;
 }
 .logo {
   width: 150px;
@@ -71,15 +71,14 @@
 }
 
 .title {
-  font-size: 1.5rem;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  font-size: 2rem; /* Adjust font size */
+  margin-bottom: 20px; /* Space below the title */
 }
 
 /* Search Box */
 .searchBox {
   width: 100%;
-  max-width: 300px;
+  max-width: 500px;
   padding: 10px;
   font-size: 1rem;
   margin-bottom: 20px;
