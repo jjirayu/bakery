@@ -286,6 +286,7 @@
   .productImage {
     width: 90%; /* Make image responsive and fit within the card */
     height: auto;
+    margin-left: 8%;
   }
   .filterSection {
     display: flex;
