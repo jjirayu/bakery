@@ -15,7 +15,7 @@ const ProductsPage = () => {
   const [filteredProducts, setFilteredProducts] = useState(initialProducts);
   const [basket, setBasket] = useState([]);
   const [selectedType, setSelectedType] = useState('');
-  const [visitorCount, setVisitorCount] = useState(null);
+
 
   useEffect(() => {
     const debouncedSearch = debounce(() => {
@@ -67,20 +67,7 @@ const ProductsPage = () => {
       .filter(item => item.quantity > 0)
     );
   };
-  useEffect(() => {
-    const updateVisitorCount = async () => {
-      try {
-        const response = await fetch('/api/visitorCount');
-        if (!response.ok) throw new Error('Failed to update visitor count');
-        const data = await response.json();
-        setVisitorCount(data.count); // Set the updated count to state
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    updateVisitorCount();
-  }, []); 
+ 
   return (
     <div className={styles.container}>
    
