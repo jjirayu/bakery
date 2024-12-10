@@ -233,6 +233,37 @@
 .exportButton:hover {
   background-color: #005bb5;
 }
+/* General PC and Mobile Styles (Already Exist) */
+/* ... your existing styles ... */
+
+/* Styles specific to iPads */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Example: Center the logo for iPads */
+  .logo {
+    margin: 20px auto;
+    display: block;
+    width: 200px; /* Adjust as needed */
+  }
+
+  /* Example: Adjust product card size for iPads */
+  .productCard {
+    width: 48%; /* Two cards per row */
+    margin: 1%; /* Add spacing */
+  }
+
+  /* Example: Modify the filter button */
+  .filterButton {
+    font-size: 14px; /* Adjust font size */
+    padding: 8px 12px; /* Adjust padding */
+  }
+
+  /* Example: Adjust spacing for header */
+  .header {
+    padding: 10px 20px;
+  }
+
+  /* Add any other iPad-specific customizations */
+}
 
 /* Media Queries */
 @media (max-width: 600px) {
