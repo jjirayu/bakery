@@ -33,7 +33,7 @@ const initialProducts = [
     { name: 'ถ้วยฟอยด์ 4003 ลายวัวชมพู', price: '155฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/ถ้วย4003 ลายวัวชมพู.jpg'},
     { name: 'ถ้วยฟอยด์ 4004', price: '155฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/ฟอย4004.png'},
     { name: 'ถ้วยฟอยด์ Gold 4004', price: '155฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/ฟอย4004Gold.png'},
-    { name: 'ถ้วยฟอยด์ Rose Gold 4004', price: '155฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/ฟอย4004RoseGold.png'},
+    { name: 'ถ้วยฟอยด์ Rose Gold 4004', price: '155฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/ฟอย4004RoseGold.jpg'},
     { name: 'กระทงกระดาษ เลม่อน 2816', price: '155฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/กระทงเลม่อน.png'},
     { name: 'กระทงกระดาษ เบเกอรี่ 2816', price: '155฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/กระทงเบเกอรี่.png'},
     { name: 'กระทงกระดาษ หัวใจ 3219', price: '155฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/กระทงกระดาษหัวใจ.png'},
