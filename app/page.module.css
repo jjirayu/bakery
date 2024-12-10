@@ -247,7 +247,7 @@
 
   /* Example: Adjust product card size for iPads */
   .productCard {
-    width: 48%; /* Two cards per row */
+    width: 45%; /* Two cards per row */
     margin: 1%; /* Add spacing */
   }
 
