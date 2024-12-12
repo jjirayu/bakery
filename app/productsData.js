@@ -44,11 +44,18 @@ const initialProducts = [
     { name: 'JT-B112 650 ml (2 ช่อง)', price: '155฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/jtb112.jpg'},
     { name: 'เอสพี ตรา UFM 100 g', price: '155฿',type:'วัตถุดิบ', quantity: 1, image: '/images/SP100G.jpg'},
     { name: 'เอสพี ตรา UFM 1 kg', price: '155฿',type:'วัตถุดิบ', quantity: 1, image: '/images/SP1KG.jpg'},
-    { name: 'ผงโกโก้ริช สีเข้ม 500 ก.', price: '190฿',type:'อื่นๆ', quantity: 1, image: '/images/โกโก้ริช สีเข้ม 500 ก.jpeg'},
-    { name: 'ผงโกโก้ริช สีปกติ 500 ก.', price: '190฿',type:'อื่นๆ', quantity: 1, image: '/images/โกโก้ริช สีอ่อน 500 ก.jpeg'},
-    { name: 'ผงโกโก้ทิวลิป สีเข้ม 440 ก.', price: '180฿',type:'อื่นๆ', quantity: 1, image: '/images/ผงโกโก้ทิวลิป สีเข้ม 440 ก.jpeg'},
-    { name: 'ผงโกโก้แวนฮูเต็น 400 ก.', price: '180฿',type:'อื่นๆ', quantity: 1, image: '/images/ผงโกโก้ทิวลิป สีเข้ม 440 ก.jpeg'},
-  
+    { name: 'ผงโกโก้ริช สีเข้ม 500 ก.', price: '190฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ริช สีเข้ม 500 ก.jpeg'},
+    { name: 'ผงโกโก้ริช สีปกติ 500 ก.', price: '190฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ริช สีอ่อน 500 ก.jpeg'},
+    { name: 'ผงโกโก้ทิวลิป สีเข้ม 440 ก.', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/ผงโกโก้ทิวลิป สีเข้ม 440 ก.jpeg'},
+    { name: 'ผงโกโก้ทิวลิป สีน้ำตาล 440 ก.', price: '170฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ทิวลิป มาตรฐาน.jpg'},
+    { name: 'ผงโกโก้แวนฮูเต็น 22-24%  1 กก.', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/VanHouten1kg.jpg'},
+    { name: 'ผงโกโก้แวนฮูเต็น 400 กรัม', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/VanHouten 400 g.jpg'},
+    { name: 'โกโก้แบรี่น้ำตาลเข้ม 1 kg', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้แบรี่น้ำตาลเข้ม.jpg'},
+    { name: 'โกโก้แบรี่น้ำตาลอ่อน 1 kg', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้แบรี่น้ำตาลแดง.jpg'},
+    { name: 'โกโก้ดัทช์ช้อยส์ 450 g', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ ดัทช์ ช้อยส์ 450 g.jpg'},
+    { name: 'โกโก้เฮอร์ชี่ย์ 450 g', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้เฮอร์ชี่ย์.jpg'},
+    { name: 'โกโก้ทิวลิปน้ำตาลแดง 440 g', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ทิวลิปน้ำตาลแดง.jpg'},
+    { name: 'โกโก้ริชชี่ 500 g', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ริชชี่ 500 g.jpg'},
     
   ];
   
