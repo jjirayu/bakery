@@ -14,7 +14,11 @@ const initialProducts = [
     { name: 'น้ำตาลทรายมิตรผลเบเกอรี่ 1 kg.', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/น้ำตาลทรายมิตรผลเบเกอรี่.jpg' },
     { name: 'น้ำตาลทรายแดงมิตรผลเบเกอรี่ 1 kg.', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/มิตรผล น้ำตาลทรายแดงเบเกอรี่.jpg' },
     { name: 'น้ำตาลทรายขาวลิน 1 กก.', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/ลินน้ำตาลทรายขาว 1kg.jpg' },
-    
+    { name: 'ลองบีชคาราเมล', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/LBCaramel.jpg'},
+    { name: 'ลองบีชคลาสสิคคาราเมล', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/LBClassicCaramel.jpg'},
+    { name: 'ลองบีชวานิลลา', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/LBVanilla.jpg'},
+    { name: 'ลองบีชสตรอเบอรี่', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/LBStrawberry.jpg'},
+    { name: 'ลองบีชอัลม่อนอบ', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/LBRoastedAlmond.jpg'},
     { name: 'ฮีโร่ถุงขยะดำหนา 28x36', price: '70฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/ฮีโร่ถุงขยะหนา 28x36.jpeg' },
     { name: 'ฮีโร่ถุงขยะดำหนา 24x30 1 กก.', price: '70฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/ฮีโร่ถุงขยะหนา 24x30 1 กก.jpeg' },
     { name: 'ฮีโร่ถุงขยะหนา 30x40 50 ถุง.', price: '70฿',type:'บรรจุภัณฑ์', quantity: 1, image: '/images/ฮีโร่ถุงขยะหนา 30x40 50 ถุง.jpeg' },
