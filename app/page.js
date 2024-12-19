@@ -117,7 +117,7 @@ const ProductsPage = () => {
         {activeTab === 'products' && (
           <>
             <div className={styles.filterSection}>
-              {['', 'บรรจุภัณฑ์', 'ของสด', 'เครื่องครัว', 'วัตถุดิบ'].map(type => (
+              {['', 'บรรจุภัณฑ์', 'ของใช้', 'เครื่องครัว', 'วัตถุดิบ'].map(type => (
                 <button
                   key={type}
                   className={styles.filterButton}
