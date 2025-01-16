@@ -194,7 +194,20 @@
   align-items: center;
   gap: 10px;
 }
-
+.symbolButton {
+  width: 30px;          /* Fixed width */
+  height: 30px;         /* Fixed height */
+  font-size: 1.5rem;     /* Adjusted font size to fit inside the button */
+  display: flex;
+  align-items: center;  /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content */
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 0;           /* Remove padding to maintain the fixed size */
+}
 .quantityButton,
 .addButton {
   padding: 5px 10px;
@@ -351,7 +364,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    padding: 0px 5px;           /* Remove padding to maintain the fixed size */
+    padding: 0;           /* Remove padding to maintain the fixed size */
   }
 
   .addButton {

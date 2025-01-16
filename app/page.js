@@ -135,14 +135,14 @@ const ProductsPage = () => {
                   <p className={styles.productPrice}>ราคา: {product.price}</p>
                   <div className={styles.productQuantity}>
                     <button
-                      className={styles.quantityButton}
+                      className={styles.symbolButton}
                       onClick={() => handleQuantityChange(product.name, -1)}
                     >
                       -
                     </button>
                     <span>{product.quantity}</span>
                     <button
-                      className={styles.quantityButton}
+                      className={styles.symbolButton}
                       onClick={() => handleQuantityChange(product.name, 1)}
                     >
                       +
