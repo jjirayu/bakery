@@ -351,6 +351,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    padding: 0;           /* Remove padding to maintain the fixed size */
   }
 
   .addButton {
