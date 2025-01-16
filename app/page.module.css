@@ -369,9 +369,10 @@
   }
   .symbolButton {
     
-    width: 40px;  /* Ensure button width for mobile */
-    height: 40px; /* Ensure button height for mobile */
+     width: 30px;  /* Ensure button width for mobile */
+    height: 30px; /* Ensure button height for mobile */
     font-size: 1.5rem; /* Adjust font size if needed */
+    padding: 5px 10px;
   }
   .addButton {
     font-size: 0.60rem; /* Smaller font size for mobile */
