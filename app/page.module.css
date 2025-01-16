@@ -367,7 +367,7 @@
     padding: 0;           /* Remove padding to maintain the fixed size */
   }
   .symbolButton {
-    padding: 2px 15px; /* Adjust padding */
+    padding: 5px 10px; /* Adjust padding */
     font-size: 1rem;    /* Adjust font size for better fit */
     display: flex;
     align-items: center;  /* Vertically center the content */
