@@ -355,14 +355,14 @@
 
   .addButton {
     font-size: 0.60rem; /* Smaller font size for mobile */
-    padding: 5px 10px; /* Adjust padding */
+    padding: 5px 15px; /* Adjust padding */
     background-color: #0070f3;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
-    width: fit-content;
+    width: 70%;
     margin: 0 auto; /* Center the button horizontally */
   }
   .filterSection {
