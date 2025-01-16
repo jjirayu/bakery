@@ -305,13 +305,14 @@
   }
   .productList {
     display: flex;
-    flex-direction: column; /* Stack product cards vertically */
-    gap: 10px; /* Add some space between each product card */
+    flex-wrap: wrap; /* Allow wrapping to a new line */
+    gap: 10px; /* Space between product cards */
+    justify-content: space-between; /* Distribute cards evenly */
   }
 
   .productCard {
-    width: 100%; /* Make each product card take up the full width */
-    box-sizing: border-box; /* Ensure padding and borders are included in width calculation */
+    width: 48%; /* Make each product card take about half the width */
+    box-sizing: border-box; /* Include padding and borders in the width */
   }
 
   .productImage {
