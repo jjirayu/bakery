@@ -320,6 +320,19 @@
     height: auto;
     margin-left: 8%;
   }
+  .productPrice {
+    font-size: 1.2rem; /* Slightly larger font size */
+    font-weight: bold;
+    color: #555; /* Subtle color */
+    text-align: center; /* Center align the price */
+    margin-bottom: 10px; /* Add spacing below the price */
+  }
+  .productQuantity {
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: space-around; /* Spread the buttons evenly */
+    gap: 5px; /* Add spacing between elements */
+  }
   .filterSection {
     display: flex;
     flex-wrap: wrap; /* Allow buttons to wrap to a new line if space is tight */
