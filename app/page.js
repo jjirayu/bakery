@@ -151,7 +151,7 @@ const ProductsPage = () => {
                       className={styles.addButton}
                       onClick={() => handleAddToBasket(product)}
                     >
-                      Add to Basket
+                      เพิ่มในตะกร้า
                     </button>
                   </div>
                 </div>
