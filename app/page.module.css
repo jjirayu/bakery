@@ -366,7 +366,20 @@
     cursor: pointer;
     padding: 0;           /* Remove padding to maintain the fixed size */
   }
-
+  .symbolButton {
+    width: 40px;          /* Increase the width for a more noticeable size */
+    height: 40px;         /* Ensure the height is equal to width for a square shape */
+    font-size: 1.5rem;    /* Adjust font size for better fit */
+    display: flex;
+    align-items: center;  /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 6px;    /* Slightly rounded corners for a more polished look */
+    cursor: pointer;
+    padding: 0;            /* Remove padding to maintain the fixed size */
+  }
   .addButton {
     font-size: 0.60rem; /* Smaller font size for mobile */
     padding: 2px 15px; /* Adjust padding */
