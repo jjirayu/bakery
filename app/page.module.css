@@ -333,6 +333,32 @@
     justify-content: space-around; /* Spread the buttons evenly */
     gap: 5px; /* Add spacing between elements */
   }
+  .quantityButton {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .addButton {
+    font-size: 0.85rem; /* Smaller font size for mobile */
+    padding: 5px 10px; /* Adjust padding */
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto; /* Center the button horizontally */
+  }
   .filterSection {
     display: flex;
     flex-wrap: wrap; /* Allow buttons to wrap to a new line if space is tight */
