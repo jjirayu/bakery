@@ -375,9 +375,9 @@
     background-color: #0070f3;
     color: white;
     border: none;
-    border-radius: 6px;    /* Slightly rounded corners for a more polished look */
+    border-radius: 4px;    /* Slightly rounded corners for a more polished look */
     cursor: pointer;
-    padding: 0;            /* Remove padding to maintain the fixed size */
+           /* Remove padding to maintain the fixed size */
   }
   .addButton {
     font-size: 0.60rem; /* Smaller font size for mobile */
