@@ -367,6 +367,8 @@
     padding: 0;           /* Remove padding to maintain the fixed size */
   }
   .symbolButton {
+    width: 30px;          /* Fixed width */
+    height: 30px;   
     padding: 5px 10px; /* Adjust padding */
     font-size: 1rem;    /* Adjust font size for better fit */
     display: flex;
