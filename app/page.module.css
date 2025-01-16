@@ -314,7 +314,13 @@
     width: 48%; /* Make each product card take about half the width */
     box-sizing: border-box; /* Include padding and borders in the width */
   }
-
+  .productName {
+    margin-top: 5px; /* Reduce the top margin */
+    margin-bottom: 10px; /* Optional: Adjust bottom spacing */
+    font-size: 1rem; /* Optional: Adjust font size for mobile */
+    text-align: center; /* Optional: Center the text */
+    line-height: 1.2; /* Optional: Adjust line height for better spacing */
+  }
   .productImage {
     width: 90%; /* Make image responsive and fit within the card */
     height: auto;
@@ -348,7 +354,7 @@
   }
 
   .addButton {
-    font-size: 0.85rem; /* Smaller font size for mobile */
+    font-size: 0.60rem; /* Smaller font size for mobile */
     padding: 5px 10px; /* Adjust padding */
     background-color: #0070f3;
     color: white;
