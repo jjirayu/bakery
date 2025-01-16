@@ -343,8 +343,6 @@
     width: 30px;
     height: 30px;
     font-size: 1rem;
-    padding-left: 2px; /* Reduce space to the left of the minus button */
-    padding-right: 5px; /* Adjust space to the right if needed */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -357,10 +355,7 @@
 
   .addButton {
     font-size: 0.60rem; /* Smaller font size for mobile */
-    padding-left: 5px; /* Reduce left padding to bring text closer */
-    padding-right: 5px; /* Reduce right padding to make the button fit better */
-    margin-right: 0; /* Remove right margin if it has one */
-    margin-left: 0;  /* Remove left margin */
+    padding: 2px 15px; /* Adjust padding */
     background-color: #0070f3;
     color: white;
     border: none;
@@ -368,7 +363,7 @@
     cursor: pointer;
     text-align: center;
     width: 70%;
-   
+    margin: 0 auto; /* Center the button horizontally */
   }
   .filterSection {
     display: flex;
