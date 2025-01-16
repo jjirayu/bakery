@@ -354,8 +354,8 @@
   }
 
   .addButton {
-    font-size: 0.60rem; /* Smaller font size for mobile */
-    padding: 2px 10px; /* Adjust padding */
+    font-size: 11px; /* Smaller font size for mobile */
+    padding: 2px 5px; /* Adjust padding */
     background-color: #0070f3;
     color: white;
     border: none;
