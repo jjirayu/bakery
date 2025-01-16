@@ -311,11 +311,11 @@
   }
 
   .productCard {
-    width: 49%; /* Make each product card take about half the width */
+    width: 48%; /* Make each product card take about half the width */
     box-sizing: border-box; /* Include padding and borders in the width */
   }
   .productName {
-    margin-top: 5px; /* Reduce the top margin */
+    margin-top: 2px; /* Reduce the top margin */
     margin-bottom: 10px; /* Optional: Adjust bottom spacing */
     font-size: 1rem; /* Optional: Adjust font size for mobile */
     text-align: center; /* Optional: Center the text */
@@ -337,7 +337,7 @@
     display: flex;
     align-items: center; /* Vertically center the content */
     justify-content: space-around; /* Spread the buttons evenly */
-    gap: 5px; /* Add spacing between elements */
+    gap: 8px; /* Add spacing between elements */
   }
   .quantityButton {
     width: 30px;
