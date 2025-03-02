@@ -77,11 +77,28 @@ const ProductsPage = () => {
 
       </Head>
       {showModal && (
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <p>พบกับเราเร็วๆนี้</p>
-            <button onClick={() => setShowModal(false)}>ปิด</button>
-          </div>
+        <div className={styles.modal} style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          backgroundColor: 'red',
+          color: 'white',
+          textAlign: 'center',
+          padding: '10px',
+          fontSize: '18px',
+          fontWeight: 'bold',
+          zIndex: 1000
+        }}>
+          <p>พบกับเราเร็วๆนี้</p>
+          <button onClick={() => setShowModal(false)} style={{
+            backgroundColor: 'white',
+            color: 'red',
+            border: 'none',
+            padding: '5px 10px',
+            fontSize: '16px',
+            cursor: 'pointer'
+          }}>ปิด</button>
         </div>
       )}
       <header className={styles.header}>
