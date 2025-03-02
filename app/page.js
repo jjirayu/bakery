@@ -15,7 +15,7 @@ const ProductsPage = () => {
   const [filteredProducts, setFilteredProducts] = useState(initialProducts);
   const [basket, setBasket] = useState([]);
   const [selectedType, setSelectedType] = useState('');
-
+  const [showModal, setShowModal] = useState(true);
 
   useEffect(() => {
     const debouncedSearch = debounce(() => {
@@ -76,7 +76,14 @@ const ProductsPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
       </Head>
-
+      {showModal && (
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
+            <p>พบกับเราเร็วๆนี้</p>
+            <button onClick={() => setShowModal(false)}>ปิด</button>
+          </div>
+        </div>
+      )}
       <header className={styles.header}>
         <Image
           src="/images/logo2.png"
