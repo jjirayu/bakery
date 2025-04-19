@@ -155,7 +155,7 @@ const ProductsPage = () => {
               {filteredProducts.map((product, index) => (
                 <div className={styles.productCard} key={index}>
                   <h2 className={styles.productName}>{product.name}</h2>
-                  <p className={styles.barcode}>รหัสสินค้า: {product.barcode}</p>
+                  <p className={styles.barcode}> {product.barcode}</p>
                   <img src={product.image} alt={product.name} className={styles.productImage} />
                   <p className={styles.productPrice}>ราคา: {product.price}</p>
                   <div className={styles.productQuantity}>

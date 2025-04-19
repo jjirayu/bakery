@@ -4,11 +4,7 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-.barcode {
-  font-size: 14px;
-  color: #555;
-  margin: 4px 0;
-}
+
 .header {
   display: flex;
   align-items: center; /* Vertically center logo and title/search box */
