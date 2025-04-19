@@ -1,7 +1,7 @@
 // data/productsData.js
 
 const initialProducts = [
-    { name: 'แป้งว่าว', price: '35฿',type:'วัตถุดิบ', quantity: 1, image: '/images/แป้งว่าว.jpeg' },
+    { name: 'แป้งว่าว',barcode: '885000001001', price: '35฿',type:'วัตถุดิบ', quantity: 1, image: '/images/แป้งว่าว.jpeg' },
     { name: 'แป้งหงส์ขาว', price: '42฿',type:'วัตถุดิบ', quantity: 1, image: '/images/แป้งหงส์.jpeg' },
     { name: 'แป้งพัด', price: '46฿',type:'วัตถุดิบ', quantity: 1, image: '/images/แป้งพัด.jpeg' },
     { name: 'แป้งบัวแดง', price: '45฿',type:'วัตถุดิบ', quantity: 1, image: '/images/แป้งบัวแดง.jpeg' },
@@ -22,7 +22,7 @@ const initialProducts = [
     { name: 'โกโก้ทิวลิปน้ำตาลแดง 440 g', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ทิวลิปน้ำตาลแดง.jpg'},
     { name: 'โกโก้ริชชี่ 500 g', price: '180฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ริชชี่ 500 g.jpg'},
     { name: 'โกโก้อโรม่า สีน้ำตาล 500 g', price: '188฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ริชชี่ 500 g.jpg'},
-    { name: 'โกโก้อโรม่า สีน้ำตาลเข้ม 500 g', price: '190฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ริชชี่ 500 g.jpg'},
+    { name: 'โกโก้อโรม่า สีน้ำตาลเข้ม 500 g', price: '240฿',type:'วัตถุดิบ', quantity: 1, image: '/images/โกโก้ริชชี่ 500 g.jpg'},
     { name: 'น้ำตาลทรายแดงมิตรผล 1 kg.', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/ทรายแดงมิตรผล.jpeg' },
     { name: 'น้ำตาลทรายขาวมิตรผล 1 kg.', price: '27฿',type:'วัตถุดิบ', quantity: 1, image: '/images/น้ำตาลทรายขาว 1 kg.jpg' },
     { name: 'น้ำตาลทรายมิตรผลเบเกอรี่ 1 kg.', price: '41฿',type:'วัตถุดิบ', quantity: 1, image: '/images/น้ำตาลทรายมิตรผลเบเกอรี่.jpg' },

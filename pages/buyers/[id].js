@@ -81,16 +81,34 @@ export default function BuyerDetails() {
         <p><strong>Telephone Number:</strong> {buyer.phone}</p>
         <p><strong>Address:</strong> {buyer.address}</p>
       </div>
-      <ul className={styles.itemsList}>
-        {itemsWithTotal.map((item, index) => (
-          <li key={index} className={styles.item}>
-            {item.name} - Quantity: {item.quantity} - Price: ฿{item.price} - 
-            <strong> Total: ฿{item.total.toFixed(2)}</strong>
-          </li>
-        ))}
-      </ul>
-      <div className={styles.grandTotal}>
-        <strong>Grand Total: ฿{grandTotal.toFixed(2)}</strong>
+
+      <div className={styles.tableContainer}>
+        <table className={styles.itemsTable}>
+          <thead>
+            <tr>
+              <th>Product Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Barcode</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {itemsWithTotal.map((item, index) => (
+              <tr key={index}>
+                <td>{item.name}</td>
+                <td>{item.quantity}</td>
+                <td>฿{item.price}</td>
+                <td>{item.barcode}</td>
+                <td><strong>฿{item.total.toFixed(2)}</strong></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <div className={styles.grandTotal}>
+          <strong>Grand Total: ฿{grandTotal.toFixed(2)}</strong>
+        </div>
       </div>
     </div>
   );

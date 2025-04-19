@@ -9,7 +9,8 @@ const Basket = ({ basket, updateQuantity }) => {
     address: '',
     email: '',
     deliveryDate: '', // New state for delivery date
-    deliveryTime: ''  // New state for delivery time slot
+    deliveryTime: '' ,
+
   });
 
   // Calculate total value for each item and total basket amount
@@ -42,7 +43,8 @@ const Basket = ({ basket, updateQuantity }) => {
         name: item.name,
         quantity: item.quantity,
         price: item.price,
-        totalValue: item.totalValue.toFixed(2)
+        totalValue: item.totalValue.toFixed(2),
+         barcode: item.barcode
       }))
     };
 

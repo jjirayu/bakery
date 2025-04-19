@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import styles from './Buyers.module.css'; // Import your CSS module for styling
 
 export default function Buyers() {
   const [buyers, setBuyers] = useState([]);
@@ -10,7 +11,17 @@ export default function Buyers() {
       try {
         const response = await fetch('/api/getBuyers');
         const data = await response.json();
-        setBuyers(data);
+        
+        // Calculate grand total for each buyer
+        const updatedBuyers = data.map((buyer) => {
+          const grandTotal = buyer.items.reduce((acc, item) => {
+            return acc + (parseFloat(item.price.replace('฿', '')) * item.quantity);
+          }, 0);
+
+          return { ...buyer, grandTotal };
+        });
+
+        setBuyers(updatedBuyers);
       } catch (error) {
         console.error('Error fetching buyers:', error);
       }
@@ -22,16 +33,28 @@ export default function Buyers() {
   return (
     <div>
       <h1>Buyer List</h1>
-      <ul>
-        {buyers.map((buyer) => (
-          <li key={buyer._id}>
-            <Link href={`/buyers/${buyer._id}`}>
-              {buyer.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <table className={styles.table}>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Delivery Time</th>
+            <th>Grand Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {buyers.map((buyer) => (
+            <tr key={buyer._id}>
+              <td>
+                <Link href={`/buyers/${buyer._id}`}>
+                  <div className={styles.link}>{buyer.name}</div>
+                </Link>
+              </td>
+              <td>{buyer.deliveryTime}</td>
+              <td>฿{buyer.grandTotal.toFixed(2)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
-

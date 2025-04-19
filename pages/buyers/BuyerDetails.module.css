@@ -1,77 +1,49 @@
 .container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-  }
-  
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
-  }
-  
-  .details {
-    font-size: 16px;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  .details p {
-    margin: 5px 0;
-  }
-  
-  .itemsList {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .item {
-    background-color: #fff;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  .item:last-child {
-    margin-bottom: 0;
-  }
-  
-  .grandTotal {
-    font-size: 18px;
-    text-align: right;
-    margin-top: 20px;
-    font-weight: bold;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-  
-  .loading {
-    font-size: 18px;
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  .error {
-    color: red;
-    font-size: 18px;
-    text-align: center;
-  }
-  
-  .noBuyer {
-    font-size: 18px;
-    text-align: center;
-    margin-top: 50px;
-  }
-  
+  margin: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.details p {
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+.tableContainer {
+  margin-top: 20px;
+}
+
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.itemsTable th,
+.itemsTable td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.itemsTable th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.itemsTable td {
+  background-color: #fff;
+}
+
+.grandTotal {
+  text-align: right;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding-top: 10px;
+}
