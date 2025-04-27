@@ -336,7 +336,7 @@
     line-height: 1.2; /* Optional: Adjust line height for better spacing */
   }
   .productImage {
-    width: 90%; /* Make image responsive and fit within the card */
+    width: 95%; /* Make image responsive and fit within the card */
     height: auto;
     margin-left: 8%;
   }

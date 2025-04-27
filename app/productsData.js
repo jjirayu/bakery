@@ -35,7 +35,7 @@ const initialProducts = [
     { name: 'กล่องข้าว 1 ช่อง 750 มล. 25 ชิ้น ไม่ล็อค',barcode: '8859085903568',price: '49฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/sn750R.jpg' },
     { name: 'กล่องข้าว 2 ช่อง 750 มล. 25 ชิ้น ไม่ล็อค',barcode: '8859085903568',price: '49฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/sn750R2.jpg' },
     { name: 'กล่อง SN101 100 ชิ้น ไม่ล็อค',barcode: '8859085901526',price: '58฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/sn101.jpg' },
-    { name: 'กล่อง SN104 100 ชิ้น ไม่ล็อค',barcode: '8859085901304',price: '115฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/sn104.jpg' },
+    { name: 'กล่อง SN104 100 ชิ้น ไม่ล็อค',barcode: '8859085901304',price: '115฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/SN104.jpg' },
     { name: 'กล่อง SN-1H 100 ชิ้น ไม่ล็อค',barcode: '8859085902004',price: '69฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/SN 1H.jpg' },
     { name: 'กล่อง SN-2H 100 ชิ้น ไม่ล็อค',barcode: '8859085901311',price: '80฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/SN 2H.jpg' },
     { name: 'กล่อง SN-4H 100 ชิ้น ไม่ล็อค',barcode: '8859085901281',price: '98฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/SN-4H.jpg' },
