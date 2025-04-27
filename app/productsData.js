@@ -32,11 +32,23 @@ const initialProducts = [
     { name: 'แป้งข้าวโพด ครัววังทิพย์ 500 ก.', barcode: '8852633090604',     price: '25฿',  type: 'วัตถุดิบเบเกอรี่', quantity: 1, image: '/images/แป้งครัววังทิพย์.jpg' },
     { name: 'พริม่าแป้งซอฟท์เค้ก 1 กก.',    barcode: '13333',            price: '170฿', type: 'วัตถุดิบเบเกอรี่', quantity: 1, image: '/images/พริม่าซอฟเค้ก.jpg' },
     { name: 'พริม่าแป้งซอฟท์วีท 1 กก.',     barcode: '1050098',          price: '170฿', type: 'วัตถุดิบเบเกอรี่', quantity: 1, image: '/images/ซอร์ฟวีท.jpg' },
-    
-    { name: 'กล่อง SN101 100 ชิ้น ไม่ล็อค',barcode: '8859085901526',price: '58฿', type: 'บรรจุภัณฑ์เบเกอรี่-เครื่องดื่ม', quantity: 1, image: '/images/sn101.jpg' },
-    { name: 'กล่อง SN104 100 ชิ้น ไม่ล็อค',barcode: '8859085901304',price: '115฿', type: 'บรรจุภัณฑ์เบเกอรี่-เครื่องดื่ม', quantity: 1, image: '/images/sn104.jpg' },
-    { name: 'กล่อง SN-1H 100 ชิ้น ไม่ล็อค',barcode: '8859085901304',price: '69฿', type: 'บรรจุภัณฑ์เบเกอรี่-เครื่องดื่ม', quantity: 1, image: '/images/SN 1H.jpg' },
-    { name: 'กล่อง SN-2H 100 ชิ้น ไม่ล็อค',barcode: '8859085901311',price: '80฿', type: 'บรรจุภัณฑ์เบเกอรี่-เครื่องดื่ม', quantity: 1, image: '/images/SN 2H.jpg' },
+    { name: 'กล่องข้าว 1 ช่อง 750 มล. 25 ชิ้น ไม่ล็อค',barcode: '8859085903568',price: '49฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/sn750R.jpg' },
+    { name: 'กล่องข้าว 2 ช่อง 750 มล. 25 ชิ้น ไม่ล็อค',barcode: '8859085903568',price: '49฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/sn750R2.jpg' },
+    { name: 'กล่อง SN101 100 ชิ้น ไม่ล็อค',barcode: '8859085901526',price: '58฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/sn101.jpg' },
+    { name: 'กล่อง SN104 100 ชิ้น ไม่ล็อค',barcode: '8859085901304',price: '115฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/sn104.jpg' },
+    { name: 'กล่อง SN-1H 100 ชิ้น ไม่ล็อค',barcode: '8859085902004',price: '69฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/SN 1H.jpg' },
+    { name: 'กล่อง SN-2H 100 ชิ้น ไม่ล็อค',barcode: '8859085901311',price: '80฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/SN 2H.jpg' },
+    { name: 'กล่อง SN-4H 100 ชิ้น ไม่ล็อค',barcode: '8859085901281',price: '98฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/SN-4H.jpg' },
+    { name: 'กล่อง SN-37 100 ชิ้น ไม่ล็อค',barcode: '8859085902943',price: '63฿', type: 'บรรจุภัณฑ์อาหาร-เบเกอรี่', quantity: 1, image: '/images/SN-37.jpg' },
+    { name: 'แก้ว 16oz ฝา 95 เรียบ 50 ชิ้น',barcode: '8859350500522',price: '43฿', type: 'บรรจุภัณฑ์เครื่องดื่ม', quantity: 1, image: '/images/PP 16 Oz2.jpg' },
+    { name: 'แก้ว 20oz ฝา 95 เรียบ 50 ชิ้น',barcode: '8859350500546',price: '48฿', type: 'บรรจุภัณฑ์เครื่องดื่ม', quantity: 1, image: '/images/PP 16 Oz2.jpg' },
+    { name: 'แก้วแคปซูล 18oz ฝา 95 50 ชิ้น',barcode: '8859350501789',price: '46฿', type: 'บรรจุภัณฑ์เครื่องดื่ม', quantity: 1, image: '/images/18oz capsule.jpg' },
+    { name: 'แก้ว 12oz ฝา 95 ลอน 100 ชิ้น',barcode: '8859350500010',price: '43฿', type: 'บรรจุภัณฑ์เครื่องดื่ม', quantity: 1, image: '/images/ลอน12oz.jpg' },
+    { name: 'แก้ว 20oz ฝา 95 ลอน 50 ชิ้น',barcode: '8859350500133',price: '35฿', type: 'บรรจุภัณฑ์เครื่องดื่ม', quantity: 1, image: '/images/ลอน20oz.jpg' },
+    { name: 'ฝาโดม 95 เจาะ 100 ใบ ช้างไทย',barcode: '8859350500959',price: '42฿', type: 'บรรจุภัณฑ์เครื่องดื่ม', quantity: 1, image: '/images/ฝาโดม 95.jpg' },
+   
+   
+   
     { name: 'ผงโกโก้แวนฮูเต็น 100 กรัม',            barcode: '8991001400284',      price: '100฿', type: 'วัตถุดิบ',   quantity: 1, image: '/images/โกโก้แวน100.jpg' },    
     { name: 'NLTY ถ้วยน้ำจิ้ม PP 2 ออนซ์ 50 ชุด', barcode: '8859748800630', price: '43฿', type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/ถ้วยน้ำจิ้ม2ออนซ์.jpg' },
   { name: 'NLTY ถ้วยน้ำจิ้ม PP 3 ออนซ์ 50 ชุด', barcode: '8859748800647', price: '45฿', type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/blank.jpeg' },
