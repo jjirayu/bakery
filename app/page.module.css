@@ -336,9 +336,9 @@
     line-height: 1.2; /* Optional: Adjust line height for better spacing */
   }
   .productImage {
-    width: 95%; /* Make image responsive and fit within the card */
+    width: 98%; /* Make image responsive and fit within the card */
     height: auto;
-    margin-left: 8%;
+    margin-left: 4%;
   }
   .productPrice {
     font-size: 1.2rem; /* Slightly larger font size */
