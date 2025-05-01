@@ -331,17 +331,17 @@
   .productName {
     margin-top: 2px; /* Reduce the top margin */
     margin-bottom: 10px; /* Optional: Adjust bottom spacing */
-    font-size: 1rem; /* Optional: Adjust font size for mobile */
+    font-size: 8px; /* Optional: Adjust font size for mobile */
     text-align: center; /* Optional: Center the text */
     line-height: 1.2; /* Optional: Adjust line height for better spacing */
   }
   .productImage {
-    width: 98%; /* Make image responsive and fit within the card */
+    width: 99%; /* Make image responsive and fit within the card */
     height: auto;
-    margin-left: 4%;
+    margin-left: 2%;
   }
   .productPrice {
-    font-size: 1.2rem; /* Slightly larger font size */
+    font-size: 10px; /* Slightly larger font size */
     font-weight: bold;
     color: #555; /* Subtle color */
     text-align: center; /* Center align the price */
