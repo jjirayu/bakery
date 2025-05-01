@@ -341,7 +341,7 @@
     margin-left: 3%;
   }
   .productPrice {
-    font-size: 1.2rem; /* Slightly larger font size */
+    font-size: 16px; /* Slightly larger font size */
     font-weight: bold;
     color: #555; /* Subtle color */
     text-align: center; /* Center align the price */
