@@ -331,7 +331,9 @@
   .productName {
     margin-top: 2px; /* Reduce the top margin */
     margin-bottom: 10px; /* Optional: Adjust bottom spacing */
-    font-size: 10px; /* Optional: Adjust font size for mobile */
+    margin-left: 0px;
+    margin-right: 0px;
+    font-size: 12px; /* Optional: Adjust font size for mobile */
     text-align: center; /* Optional: Center the text */
     line-height: 1.2; /* Optional: Adjust line height for better spacing */
   }
