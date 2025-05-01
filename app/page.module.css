@@ -320,12 +320,12 @@
   .productList {
     display: flex;
     flex-wrap: wrap; /* Allow wrapping to a new line */
-    gap: 8px; /* Space between product cards */
+    gap: 7px; /* Space between product cards */
     justify-content: space-between; /* Distribute cards evenly */
   }
 
   .productCard {
-    width: 49%; /* Make each product card take about half the width */
+    width: 48%; /* Make each product card take about half the width */
     box-sizing: border-box; /* Include padding and borders in the width */
   }
   .productName {
