@@ -64,7 +64,8 @@ const initialProducts = [
     { name: 'กลิ่นมะพร้าวน้ำหอมภูรินภูริชญ์',barcode: '10000502',price: '25฿', type: 'วัตถุดิบเบเกอรี่', quantity: 1, image: '/images/มะพร้าวน้ำหอม.jpg' },
     { name: 'กลิ่นนมสดฮอกไกโดภูรินภูริชญ์',barcode: '10000502',price: '25฿', type: 'วัตถุดิบเบเกอรี่', quantity: 1, image: '/images/กลิ่นนมฮอก.jpg' },
     { name: 'กลิ่นส้มยูสุภูรินภูริชญ์',barcode: '10000502',price: '25฿', type: 'วัตถุดิบเบเกอรี่', quantity: 1, image: '/images/ส้มยูสุ.jpg' },
-
+    { name: 'กลิ่นนมแมววินเนอร์',barcode: '8850543891342',price: '27฿', type: 'วัตถุดิบเบเกอรี่', quantity: 1, image: '/images/กลิ่นนมแมวW.jpg' },
+    { name: 'กลิ่นช็อคโกแลตวินเนอร์',barcode: '8850543891342',price: '27฿', type: 'วัตถุดิบเบเกอรี่', quantity: 1, image: '/images/กลิ่นนมแมวW.jpg' },
     { name: 'ผงโกโก้แวนฮูเต็น 100 กรัม',            barcode: '8991001400284',      price: '100฿', type: 'วัตถุดิบ',   quantity: 1, image: '/images/โกโก้แวน100.jpg' },    
     
 { name: 'ภูรินภูริชญ์ สีฟ้า',                                        barcode: '10004180',     price: '12฿',  type: 'วัตถุดิบ',   quantity: 1, image: '/images/blank.jpeg' },
