@@ -173,9 +173,7 @@ const Basket = ({ basket, updateQuantity }) => {
                   required
                 >
                   <option value="">Select a time</option>
-                  <option value="8:00-12:00">8:00-12:00</option>
-                  <option value="12:00-16:00">12:00-16:00</option>
-                  <option value="16:00-20:00">16:00-20:00</option>
+                  <option value="16:00-18:00">16:00-18:00</option>
                 </select>
               </div>
               <div className={styles.modalButtons}>
