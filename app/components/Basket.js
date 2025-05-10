@@ -8,18 +8,18 @@ const Basket = ({ basket, updateQuantity }) => {
     phone: '',
     address: '',
     email: '',
-    deliveryDate: '', // New state for delivery date
-    deliveryTime: '' ,
-
+    deliveryDate: '',
+    deliveryTime: '',
   });
 
-  // Calculate total value for each item and total basket amount
   const basketWithTotals = basket.map(item => ({
     ...item,
     totalValue: item.quantity * parseFloat(item.price.replace('฿', ''))
   }));
 
   const totalAmount = basketWithTotals.reduce((acc, item) => acc + item.totalValue, 0);
+  const shippingCost = totalAmount < 100 ? 20 : 0;
+  const grandTotal = totalAmount + shippingCost;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -29,22 +29,21 @@ const Basket = ({ basket, updateQuantity }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Get current date and time for order submission
     const currentDateTime = new Date().toLocaleString();
-
-    // Combine delivery date and time into a single field
     const deliveryDateTime = `${formData.deliveryDate} ${formData.deliveryTime}`;
 
     const dataToSave = {
       ...formData,
-      orderDate: currentDateTime, // Add the current date and time to the order
-      deliveryDateTime,           // Save combined delivery date and time
+      orderDate: currentDateTime,
+      deliveryDateTime,
+      shippingCost: shippingCost.toFixed(2),
+      grandTotal: grandTotal.toFixed(2),
       items: basketWithTotals.map(item => ({
         name: item.name,
         quantity: item.quantity,
         price: item.price,
         totalValue: item.totalValue.toFixed(2),
-         barcode: item.barcode
+        barcode: item.barcode
       }))
     };
 
@@ -75,14 +74,15 @@ const Basket = ({ basket, updateQuantity }) => {
       phone: '',
       address: '',
       email: '',
-      deliveryDate: '', // Reset delivery date
-      deliveryTime: ''  // Reset delivery time
+      deliveryDate: '',
+      deliveryTime: ''
     });
   };
 
   return (
     <div className={styles.basketContainer}>
-      <h2>Basket</h2>
+      <h1>ตะกร้า</h1>
+      <h3>ฟรีค่าขนส่งเมื่อยอดซื้อมากกว่า 100 บาท </h3>
       <ul className={styles.basketList}>
         {basketWithTotals.map((item, index) => (
           <li key={index} className={styles.basketItem}>
@@ -98,8 +98,14 @@ const Basket = ({ basket, updateQuantity }) => {
         ))}
       </ul>
       <div className={styles.total}>
-        Total Amount: ฿{totalAmount.toFixed(2)}
-      </div>
+  รวมค่าสินค้า: ฿{totalAmount.toFixed(2)}
+</div>
+<div className={styles.total}>
+  ค่าขนส่ง: {shippingCost === 0 ? 'ฟรี' : `฿${shippingCost.toFixed(2)}`}
+</div>
+<div className={styles.total}>
+  ยอดรวม: ฿{grandTotal.toFixed(2)}
+</div>
       <button className={styles.buyButton} onClick={() => setShowModal(true)}>
         ซื้อเลย
       </button>
@@ -110,7 +116,7 @@ const Basket = ({ basket, updateQuantity }) => {
             <h3>กรอกรายละเอียดสำหรับการจัดส่ง</h3>
             <form onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="name">ชื่อ:</label>
                 <input
                   type="text"
                   id="name"
@@ -121,7 +127,7 @@ const Basket = ({ basket, updateQuantity }) => {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="phone">Telephone number:</label>
+                <label htmlFor="phone">เบอร์โทร:</label>
                 <input
                   type="tel"
                   id="phone"
@@ -132,7 +138,7 @@ const Basket = ({ basket, updateQuantity }) => {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="address">Address:</label>
+                <label htmlFor="address">ที่อยู่:</label>
                 <textarea
                   id="address"
                   name="address"
@@ -142,7 +148,7 @@ const Basket = ({ basket, updateQuantity }) => {
                 ></textarea>
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="email">E-mail:</label>
+                <label htmlFor="email">อีเมล์:</label>
                 <input
                   type="email"
                   id="email"
@@ -153,7 +159,7 @@ const Basket = ({ basket, updateQuantity }) => {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="deliveryDate">Delivery Date:</label>
+                <label htmlFor="deliveryDate">วันที่จัดส่ง:</label>
                 <input
                   type="date"
                   id="deliveryDate"
@@ -164,7 +170,7 @@ const Basket = ({ basket, updateQuantity }) => {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="deliveryTime">Delivery Time:</label>
+                <label htmlFor="deliveryTime">เวลาจัดส่ง:</label>
                 <select
                   id="deliveryTime"
                   name="deliveryTime"
@@ -172,20 +178,20 @@ const Basket = ({ basket, updateQuantity }) => {
                   onChange={handleInputChange}
                   required
                 >
-                  <option value="">Select a time</option>
+                  <option value="">เวลาจัดส่ง</option>
                   <option value="16:00-18:00">16:00-18:00</option>
                 </select>
               </div>
               <div className={styles.modalButtons}>
                 <button type="submit" className={styles.submitButton}>
-                  Submit
+                  ซื้อเลย
                 </button>
                 <button
                   type="button"
                   className={styles.cancelButton}
                   onClick={() => setShowModal(false)}
                 >
-                  Cancel
+                  ยกเลิก
                 </button>
               </div>
             </form>
