@@ -100,11 +100,7 @@ const initialProducts = [
 { name: 'ถ้วยฟอยด์ 4003 RoseG 100 มล. 10 ชิ้น',                       barcode: '8851484910239',price: '28฿',  type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/ฟอย4003Rosegold.jpg' },
 { name: 'ถ้วยฟอยด์ 4003 100 มล. 10 ชิ้น',                             barcode: '8851484900155',price: '25฿',  type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/ถ้วย4003.jpg' },
 { name: 'ถ้วยฟอยด์ 4001 90 มล. 10 ชิ้น S&S Multi',                   barcode: '8851484900131',price: '24฿',  type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/ฟอย4001.jpg' },
-{ name: 'ถ้วยฟอยด์ 3015 80 มล. 20 ชิ้น S&S Multi',                   barcode: '8851484910185',price: '38฿',  type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'ถ้วยฟอยด์ 3001 40 มล. 20 ชิ้น S&S Multi',                   barcode: '8851484900018',price: '19฿',  type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'ถ้วยฟอยด์ 6003 90 มล. 10 ชิ้น S&S Multi',                   barcode: '8851484910383',price: '28฿',  type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'ถ้วยฟอยด์ 6003 RoseG 90 มล. 10 ชิ้น S&S Multi',             barcode: '8851484910406',price: '30฿',  type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'ถ้วยฟอยด์ 3003 ฝาโดม 100 มล. 10 ชิ้น S&S Multi',           barcode: '8851484900032',price: '24฿',  type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/blank.jpeg' },
+
 
 
 { name: 'ทิวลิป ดาร์กช็อค คอมพาวด์',            barcode: '8994592305341',      price: '199฿', type: 'วัตถุดิบ',   quantity: 1, image: '/images/blank.jpeg' },
@@ -115,24 +111,12 @@ const initialProducts = [
 
 
 
-{ name: 'เกล็ดขนมปัง โลโบ 200 ก. - ชวนชม',      barcode: '8850030119911',      price: '35฿',  type: 'วัตถุดิบอาหาร', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'ผงกันบูด เบสท์โอเดอร์ - ชวนชม',        barcode: '8850297100141',      price: '70฿',  type: 'วัตถุดิบขนม', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'ผงฟูดับเบิลแอ็คชั่น อิมพีเรียล 100 ก. - ชวนชม', barcode: '8850332202113', price: '30฿',  type: 'วัตถุดิบขนม', quantity: 1, image: '/images/blank.jpeg' },
-
-
-{ name: 'อีซีตราดาว 450 กรัม - ชวนชม',           barcode: '8850310001295',     price: '140฿', type: 'วัตถุดิบขนม', quantity: 1, image: '/images/blank.jpeg' },
 { name: 'เอสพี ยูเอฟเอ็ม 100 ก. - ชวนชม',        barcode: '8850310000939',     price: '33฿',  type: 'วัตถุดิบขนม', quantity: 1, image: '/images/SP100G.jpg' },
 { name: 'เนยขาวสำหรับทอด ฟรายฟราย - ชวนชม',     barcode: '8850581213106',     price: '89฿',  type: 'วัตถุดิบขนม', quantity: 1, image: '/images/ฟรายฟราย.jpg' },
 { name: 'มาการีนป็อป - ชวนชม',                 barcode: '8850581311017',     price: '69฿',  type: 'วัตถุดิบขนม', quantity: 1, image: '/images/ป็อป.jpg' },
 { name: 'มาการีน ตราใบไม้ทอง 1 กก. - ชวนชม',     barcode: '8850581134036',     price: '69฿',  type: 'วัตถุดิบขนม', quantity: 1, image: '/images/ใบไม้ทอง.jpg' },
-{ name: 'มาการีนเนยสด เชสท์ 1 กก. - ชวนชม',      barcode: '8850581312021',     price: '79฿',  type: 'วัตถุดิบขนม', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'มาการีน บลูแบนด์กลิ่นเนยสด 1 กก. - ชวนชม',barcode: '8719200183858', price: '105฿', type: 'วัตถุดิบขนม', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'เนยขาวเชสท์ 1 กก. - ชวนชม',            barcode: '8850581120022',     price: '99฿',  type: 'บรรจุภัณฑ์', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'เนยขาวใบไม้ทอง 1 กก. - ชวนชม',           barcode: '8850581124020',     price: '85฿',  type: 'วัตถุดิบขนม', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'ชาซีลอนปรุงสำเร็จ ตรา 666 400 กรัม - ชวนชม',barcode: '9555051604826', price: '77฿',  type: 'วัตถุดิบเครื่องดื่ม', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'ชาซีลอนสูตรดั้งเดิม ตรา 666 400 กรัม - ชวนชม',barcode: '9555051604840', price: '79฿',  type: 'วัตถุดิบเครื่องดื่ม', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'ชาอัสสัม เทนจู 600 กรัม - ชวนชม',       barcode: '8857127870656',     price: '162฿', type: 'วัตถุดิบเครื่องดื่ม', quantity: 1, image: '/images/blank.jpeg' },
-{ name: 'ชาดำ เทนจู 600 กรัม - ชวนชม',           barcode: 'PD68000002',        price: '140฿', type: 'วัตถุดิบเครื่องดื่ม', quantity: 1, image: '/images/blank.jpeg' },
+
+
 { name: 'ชาเขียวลองบีช 400 ก. - ชวนชม',          barcode: '8859479405098',     price: '85฿',  type: 'วัตถุดิบเครื่องดื่ม', quantity: 1, image: '/images/ลองบีชชาเขียว.jpg' },
 { name: 'ชาไทยลองบีช 400 ก. - ชวนชม',            barcode: '8859479405104',     price: '85฿',  type: 'วัตถุดิบเครื่องดื่ม', quantity: 1, image: '/images/ลองบีชชาไทย.jpg' },
 

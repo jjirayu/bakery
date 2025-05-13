@@ -87,7 +87,8 @@ const ProductsPage = () => {
           quality={100}
         />
         <div className={styles.titleSearchContainer}>
-          <h1 className={styles.title}>ค้นหาสินค้า ส่งวัตถุดิบฟรีทวีวัฒนา</h1>
+          <h1 className={styles.title}>ค้นหาสินค้า</h1>
+          <h1>วัตถุดิบเบเกอรี่ บรรจุภัณฑ์ ถนนทวีวัฒนา</h1>
           <input
             type="text"
             placeholder="ค้นหาชื่อสินค้า, ยี่ห้อสินค้า..."
