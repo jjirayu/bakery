@@ -88,7 +88,7 @@ const ProductsPage = () => {
         />
         <div className={styles.titleSearchContainer}>
           <h1 className={styles.title}>ค้นหาสินค้า</h1>
-          <h3>วัตถุดิบเบเกอรี่ บรรจุภัณฑ์ ถนนทวีวัฒนา</h3>
+          <h4>วัตถุดิบเบเกอรี่ บรรจุภัณฑ์ ถนนทวีวัฒนา</h4>
           <input
             type="text"
             placeholder="ค้นหาชื่อสินค้า, ยี่ห้อสินค้า..."
