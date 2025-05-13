@@ -82,7 +82,7 @@ const Basket = ({ basket, updateQuantity }) => {
   return (
     <div className={styles.basketContainer}>
       <h1>ตะกร้า</h1>
-      <h3>ฟรีค่าขนส่งเมื่อยอดซื้อมากกว่า 100 บาท </h3>
+      <h3>ฟรีค่าขนส่งเมื่อยอดซื้อมากกว่า 100 บาท บริเวณถนนทวีวัฒนา</h3>
       <ul className={styles.basketList}>
         {basketWithTotals.map((item, index) => (
           <li key={index} className={styles.basketItem}>
